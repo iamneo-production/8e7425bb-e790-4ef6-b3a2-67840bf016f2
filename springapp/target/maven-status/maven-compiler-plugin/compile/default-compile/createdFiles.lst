@@ -1,0 +1,5 @@
+com/application/learning/LearningApplication.class
+main/java/com/application/learning/Services/CompletedAssessments/CompletedAssessmentsService.class
+main/java/com/application/learning/Controllers/CompletedAssessments/CompletedAssessmentsController.class
+main/java/com/application/learning/Models/CompletedAssessments/CompletedAssessmentsModel.class
+main/java/com/application/learning/Repository/CompletedAssessments/CompletedAssessmentsRepository.class
