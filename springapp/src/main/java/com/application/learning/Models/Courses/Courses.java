@@ -1,4 +1,4 @@
-package main.java.com.application.learning.models.courses;
+package main.java.com.application.learning.Models.Courses;
 
 import java.io.Serializable;
 

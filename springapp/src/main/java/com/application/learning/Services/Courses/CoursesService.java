@@ -1,4 +1,4 @@
-package main.java.com.application.learning.services.courses;
+package main.java.com.application.learning.Services.Courses;
 
 import java.util.List;
 

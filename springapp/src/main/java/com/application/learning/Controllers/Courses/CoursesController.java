@@ -1,4 +1,4 @@
-package main.java.com.application.learning.controllers.courses;
+package main.java.com.application.learning.Controllers.Courses;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import main.java.com.application.learning.Models.Courses.Courses;
-import main.java.com.application.learning.Services.Courses.CoursesRepository;
+import main.java.com.application.learning.Services.Courses.CoursesService;
 
 @RestController
 @RequestMapping("/courses")
