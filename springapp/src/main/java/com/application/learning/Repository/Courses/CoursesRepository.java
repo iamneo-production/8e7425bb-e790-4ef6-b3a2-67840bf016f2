@@ -1,4 +1,4 @@
-package main.java.com.application.learning.repository.courses;
+package main.java.com.application.learning.Repository.Courses;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
