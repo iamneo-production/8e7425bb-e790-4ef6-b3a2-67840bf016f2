@@ -1,5 +1,6 @@
 package main.java.com.application.learning.Models.Payment;
 
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,95 +13,70 @@ import javax.persistence.Table;
 public class PaymentModel {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @Column(nullable = false, updatable = false)
+    private Long id;
 
     @Column(name = "user_Id")
-    private int userId;
+    private Long userId;
 
     @Column(name = "course_Id")
-    private int courseId;
+    private Long courseId;
 
-    @Column(name = "first_Name")
-    private String firstName;
-
-    @Column(name = "last_Name")
-    private String lastName;
-
-    @Column(name = "email")
-    private String email;
 
     @Column(name = "amount")
-    private long amount;
+    private Long amount;
+
+    @Column(name = "date")
+    private Date date;
 
     public PaymentModel() {
     }
 
-    public PaymentModel(long id, int userId, int courseId, String firstName, String lastName, String email,
-            long amount) {
+    public PaymentModel(Long id, Long userId, Long courseId, Long amount, Date date) {
         this.id = id;
         this.userId = userId;
         this.courseId = courseId;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
         this.amount = amount;
+        this.date = date;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public int getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
-    public int getCourseId() {
+    public Long getCourseId() {
         return courseId;
     }
 
-    public void setCourseId(int courseId) {
+    public void setCourseId(Long courseId) {
         this.courseId = courseId;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public long getAmount() {
+    public Long getAmount() {
         return amount;
     }
 
-    public void setAmount(long amount) {
+    public void setAmount(Long amount) {
         this.amount = amount;
     }
 
-    
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 }

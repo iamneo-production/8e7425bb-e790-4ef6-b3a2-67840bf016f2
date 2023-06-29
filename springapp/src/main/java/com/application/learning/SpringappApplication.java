@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
 @EntityScan(basePackages = {"main.java.com.application.learning.Models"})
-public class LearningApplication {
+public class SpringappApringApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LearningApplication.class, args);
+		SpringApplication.run(SpringappApplication.class, args);
 	}
 
 }
