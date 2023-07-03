@@ -1,18 +1,7 @@
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/PaymentService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/security/ResourceNotFoundException.java
-<<<<<<< HEAD
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/CourseRepository.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/CourseController.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/PaymentController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/SpringappApplication.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/CourseService.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Course.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Payment.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/PaymentRepository.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/CourseServiceImpl.java
-=======
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/SpringappApplication.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/CourseController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Course.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/LessonServiceImpl.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Payment.java
@@ -25,4 +14,3 @@
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Lesson.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/CourseServiceImpl.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/LessonController.java
->>>>>>> 817ba4fac7770956aa11ad6c3d567942f5bdd9a8
