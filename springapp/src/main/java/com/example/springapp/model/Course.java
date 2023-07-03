@@ -1,4 +1,4 @@
-package main.java.com.application.learning.Models.Courses;
+package com.example.springapp.model;
 
 import java.io.Serializable;
 
@@ -11,8 +11,8 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Courses")
-public class Courses implements Serializable {
+@Table(name="course")
+public class Course implements Serializable {
     @Id
     @GeneratedValue(generator = "courses_gen", strategy = GenerationType.AUTO)
     @SequenceGenerator(name = "courses_gen", sequenceName = "courses_sequence", initialValue = 1, allocationSize = 1)
@@ -27,10 +27,10 @@ public class Courses implements Serializable {
     private Long instructorid;
     
     
-    public Courses() {
+    public Course() {
     }
 
-    public Courses(String coursename, String courselevel, Long courseduration, String coursedescription, Long enrolledcount, String imageUrl, Long instructorid) {
+    public Course(String coursename, String courselevel, Long courseduration, String coursedescription, Long enrolledcount, String imageUrl, Long instructorid) {
         this.coursename = coursename;
         this.courselevel = courselevel;
         this.courseduration = courseduration;
