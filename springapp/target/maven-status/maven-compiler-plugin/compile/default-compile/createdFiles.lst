@@ -8,6 +8,7 @@ com/example/springapp/controller/CourseController.class
 com/example/springapp/repository/CourseRepository.class
 com/example/springapp/service/CourseService.class
 main/java/com/example/springapp/repository/PaymentRepository.class
+main/java/com/example/springapp/model/Enrollment.class
 main/java/com/example/springapp/security/ResourceNotFoundException.class
 main/java/com/example/springapp/model/Payment.class
 com/example/springapp/model/Course.class
