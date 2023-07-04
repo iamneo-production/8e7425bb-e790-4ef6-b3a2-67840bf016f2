@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-=======
-com/example/springapp/service/CourseServiceImpl.class
 com/example/springapp/SpringappApplication.class
+com/example/springapp/service/CourseServiceImpl.class
 main/java/com/example/springapp/controller/PaymentController.class
 com/example/springapp/service/LessonService.class
 main/java/com/example/springapp/service/PaymentService.class
@@ -16,4 +14,3 @@ com/example/springapp/model/Course.class
 com/example/springapp/service/LessonServiceImpl.class
 com/example/springapp/repository/LessonRepository.class
 com/example/springapp/controller/LessonController.class
->>>>>>> a415e4511cc1ee8e5a57625447e5b66efc054e84
