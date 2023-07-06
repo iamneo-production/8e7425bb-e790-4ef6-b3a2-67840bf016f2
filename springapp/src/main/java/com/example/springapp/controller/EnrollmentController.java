@@ -29,8 +29,8 @@ public class EnrollmentController {
 	}
 	
 	 @GetMapping("/courses/{userId}")
-	    public List<Integer> getEnrolledCoursesByUserId(@PathVariable int userId) {
-	        List<Integer> enrolledCourses = new ArrayList<>();
+	    public List<Long> getEnrolledCoursesByUserId(@PathVariable Long userId) {
+	        List<Long> enrolledCourses = new ArrayList<>();
 	        List<Enrollment>enrollments=new ArrayList<>();
 	        enrollments=getAllEnrollments();
 	        for (Enrollment enrollment : enrollments) {

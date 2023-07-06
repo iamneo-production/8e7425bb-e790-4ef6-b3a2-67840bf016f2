@@ -1,29 +1,15 @@
-<<<<<<< HEAD
-/home/coder/project/workspace/springapp/src/main/java/com/application/learning/Controllers/CompletedAssessments/CompletedAssessmentsController.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/SpringappApplication.java
-/home/coder/project/workspace/springapp/src/main/java/com/application/learning/Controllers/Courses/CoursesController.java
-/home/coder/project/workspace/springapp/src/main/java/com/application/learning/Repository/Payment/PaymentRepository.java
-/home/coder/project/workspace/springapp/src/main/java/com/application/learning/Services/Payment/PaymentService.java
-/home/coder/project/workspace/springapp/src/main/java/com/application/learning/LearningApplication.java
-/home/coder/project/workspace/springapp/src/main/java/com/application/learning/Models/Courses/Courses.java
-/home/coder/project/workspace/springapp/src/main/java/com/application/learning/Models/Payment/PaymentModel.java
-/home/coder/project/workspace/springapp/src/main/java/com/application/learning/Repository/Courses/CoursesRepository.java
-/home/coder/project/workspace/springapp/src/main/java/com/application/learning/Models/CompletedAssessments/CompletedAssessmentsModel.java
-/home/coder/project/workspace/springapp/src/main/java/com/application/learning/Services/CompletedAssessments/CompletedAssessmentsService.java
-/home/coder/project/workspace/springapp/src/main/java/com/application/learning/Services/Courses/CoursesService.java
-/home/coder/project/workspace/springapp/src/main/java/com/application/learning/Controllers/Payment/PaymentController.java
-/home/coder/project/workspace/springapp/src/main/java/com/application/learning/Exception/ResourceNotFoundException.java
-/home/coder/project/workspace/springapp/src/main/java/com/application/learning/Repository/CompletedAssessments/CompletedAssessmentsRepository.java
-=======
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/PaymentService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/security/ResourceNotFoundException.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/SpringappApplication.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/CourseController.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Enrollment.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Course.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/LessonServiceImpl.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Payment.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/PaymentRepository.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/LessonService.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/EnrollmentRepository.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/EnrollmentController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/LessonRepository.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/CourseRepository.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/PaymentController.java
@@ -31,4 +17,3 @@
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Lesson.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/CourseServiceImpl.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/LessonController.java
->>>>>>> a415e4511cc1ee8e5a57625447e5b66efc054e84
