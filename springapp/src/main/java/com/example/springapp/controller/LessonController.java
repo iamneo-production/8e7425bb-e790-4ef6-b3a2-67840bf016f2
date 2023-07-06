@@ -54,18 +54,18 @@ public class LessonController {
     }
 
     // To delete the lesson based on lessonid
-    @DeleteMapping("/delete/{lessonid}")
+    @DeleteMapping("/delete/{lessonId}")
     @CrossOrigin(origins = "http://localhost:4200")
-    public ResponseEntity<?> deleteLesson(@PathVariable("lessonid") Long lessonid) {
-        lessonService.deleteLesson(lessonid);
+    public ResponseEntity<?> deleteLesson(@PathVariable("lessonId") Long lessonId) {
+        lessonService.deleteLesson(lessonId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     // To display the lessons based on courseid
-    @GetMapping("/{courseid}")
+    @GetMapping("/{courseId}")
     @CrossOrigin(origins = "http://localhost:4200")
-    public ResponseEntity<List<Lesson>> getLessonByCourseid(@PathVariable("courseid") Long courseid) {
-        List<Lesson> lesson = lessonService.getLessonByCourseid(courseid);
+    public ResponseEntity<List<Lesson>> getLessonByCourseId(@PathVariable("courseId") Long courseId) {
+        List<Lesson> lesson = lessonService.getLessonByCourseId(courseId);
         return new ResponseEntity<>(lesson, HttpStatus.OK);
     }
 

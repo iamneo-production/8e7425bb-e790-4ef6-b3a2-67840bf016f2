@@ -30,12 +30,12 @@ public class LessonServiceImpl implements LessonService{
         return lessonRepository.save(lesson);
     }
 
-    public void deleteLesson(Long lessonid) {
-        lessonRepository.deleteLessonByLessonid(lessonid);
+    public void deleteLesson(Long lessonId) {
+        lessonRepository.deleteLessonByLessonId(lessonId);
     }
 
-    public List<Lesson> getLessonByCourseid(Long courseid) {
-        return lessonRepository.getLessonByCourseid(courseid);
+    public List<Lesson> getLessonByCourseId(Long courseId) {
+        return lessonRepository.getLessonByCourseId(courseId);
     }
 
        

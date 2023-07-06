@@ -1,5 +1,9 @@
-com/example/springapp/SpringappApplication.class
 com/example/springapp/service/CourseServiceImpl.class
+<<<<<<< HEAD
+=======
+com/example/springapp/SpringappApplication.class
+main/java/com/example/springapp/controller/PaymentController.class
+>>>>>>> c737eb22183f83eeb3461c1570f602b766a530a4
 com/example/springapp/service/LessonService.class
 main/java/com/example/springapp/controller/PaymentController.class
 com/example/springapp/model/Lesson.class
@@ -13,7 +17,11 @@ main/java/com/example/springapp/security/ResourceNotFoundException.class
 main/java/com/example/springapp/model/Payment.class
 com/example/springapp/model/Course.class
 com/example/springapp/model/Enrollment.class
-com/example/springapp/controller/EnrollmentController.class
 com/example/springapp/service/LessonServiceImpl.class
+<<<<<<< HEAD
+=======
+com/example/springapp/controller/EnrollmentController.class
+com/example/springapp/repository/LessonRepository.class
+>>>>>>> c737eb22183f83eeb3461c1570f602b766a530a4
 com/example/springapp/controller/LessonController.class
 com/example/springapp/repository/LessonRepository.class
