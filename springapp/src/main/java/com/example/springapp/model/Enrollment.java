@@ -13,39 +13,39 @@ public class Enrollment {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	
 	@Column(name="user_Id")
-	private int userId;
+	private Long userId;
 	
 	@Column(name="course_Id")
-	private int courseId;
+	private Long courseId;
 	
 	public Enrollment() {
 		
 	}
-	public Enrollment(int id,int userId, int courseId) {
+	public Enrollment(Long id,Long userId, Long courseId) {
 		super();
 		this.id=id;
 		this.userId = userId;
 		this.courseId = courseId;
 	}
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
-	public int getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
-	public void setUserId(int userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
-	public int getCourseId() {
+	public Long getCourseId() {
 		return courseId;
 	}
-	public void setCourseId(int courseId) {
+	public void setCourseId(Long courseId) {
 		this.courseId = courseId;
 	}
 }

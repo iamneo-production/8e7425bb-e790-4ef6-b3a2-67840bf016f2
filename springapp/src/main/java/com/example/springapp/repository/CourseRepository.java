@@ -8,8 +8,8 @@ import com.example.springapp.model.Course;
 @Repository
 public interface CourseRepository extends JpaRepository<Course,Long> {
     
-    void deleteCourseByCourseid(Long courseid);
+    void deleteCourseByCourseId(Long courseId);
 
-    Course getCourseByCourseid(Long courseid);
+    Course getCourseByCourseId(Long courseId);
    
 }

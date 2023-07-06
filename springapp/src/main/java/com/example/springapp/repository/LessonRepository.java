@@ -10,9 +10,9 @@ import com.example.springapp.model.Lesson;
 @Repository
 public interface LessonRepository extends JpaRepository<Lesson, Long> {
 
-    void deleteLessonByLessonid(Long lessonid);
+    void deleteLessonByLessonId(Long lessonId);
     
-    List<Lesson> getLessonByCourseid(Long courseid);
+    List<Lesson> getLessonByCourseId(Long courseId);
 }
 
 

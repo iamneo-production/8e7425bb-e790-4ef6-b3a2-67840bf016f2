@@ -30,12 +30,12 @@ public class CourseServiceImpl implements CourseService {
         return courseRepository.save(course);
     }
   
-    public void deleteCourses(Long courseid) {
-        courseRepository.deleteCourseByCourseid(courseid);
+    public void deleteCourses(Long courseId) {
+        courseRepository.deleteCourseByCourseId(courseId);
     }
 
-    public Course getCourseByCourseid(Long courseid) {
-       return courseRepository.getCourseByCourseid(courseid);
+    public Course getCourseByCourseId(Long courseId) {
+       return courseRepository.getCourseByCourseId(courseId);
     }
    
 }
