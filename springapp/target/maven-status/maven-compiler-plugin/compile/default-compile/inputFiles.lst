@@ -1,10 +1,7 @@
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/PaymentService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/security/ResourceNotFoundException.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/CourseController.java
-<<<<<<< HEAD
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/SpringappApplication.java
-=======
->>>>>>> c737eb22183f83eeb3461c1570f602b766a530a4
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Enrollment.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Course.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/LessonServiceImpl.java
@@ -13,10 +10,6 @@
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/EnrollmentController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/LessonService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/EnrollmentRepository.java
-<<<<<<< HEAD
-=======
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/EnrollmentController.java
->>>>>>> c737eb22183f83eeb3461c1570f602b766a530a4
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/LessonRepository.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/CourseRepository.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/PaymentController.java
