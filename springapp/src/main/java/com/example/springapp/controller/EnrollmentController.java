@@ -3,6 +3,8 @@ package com.example.springapp.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,27 +25,23 @@ public class EnrollmentController {
 	private EnrollmentRepository enrollmentRepository;
 	
 	//get all enrollments
-	@GetMapping("/enrollments")
-	public List<Enrollment> getAllEnrollments(){
-		return enrollmentRepository.findAll();
+	@GetMapping
+	public ResponseEntity<List<Enrollment>> getAllEnrollments(){
+		List<Enrollment> enrollment= enrollmentRepository.findAll();
+		return new ResponseEntity<>(enrollment,HttpStatus.OK);
 	}
 	
-	 @GetMapping("/courses/{userId}")
-	    public List<Long> getEnrolledCoursesByUserId(@PathVariable Long userId) {
-	        List<Long> enrolledCourses = new ArrayList<>();
-	        List<Enrollment>enrollments=new ArrayList<>();
-	        enrollments=getAllEnrollments();
-	        for (Enrollment enrollment : enrollments) {
-	            if (enrollment.getUserId() == userId) {
-	                enrolledCourses.add(enrollment.getCourseId());
-	            }
-	        }
-	        return enrolledCourses;
-	    }
+	@GetMapping("/{id}")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public ResponseEntity<Enrollment> getEnrollmentbyId(@PathVariable("Id") Long id) {
+        Enrollment enrollment = enrollmentRepository.findById(id).get();
+        return new ResponseEntity<>(enrollment, HttpStatus.OK);
+    }
 	
 	// create enrollment
-	@PostMapping("/add")
-	public Enrollment createEnrollment(@RequestBody Enrollment enrollment) {
-		return enrollmentRepository.save(enrollment);
+	@PostMapping
+	public ResponseEntity<Enrollment> createEnrollment(@RequestBody Enrollment enrollment) {
+		Enrollment newEnrollment = enrollmentRepository.save(enrollment);
+		return new ResponseEntity<>(newEnrollment,HttpStatus.CREATED);
 	}
 }
