@@ -17,103 +17,61 @@ public class Course implements Serializable {
     @GeneratedValue(generator = "courses_gen", strategy = GenerationType.AUTO)
     @SequenceGenerator(name = "courses_gen", sequenceName = "courses_sequence", initialValue = 1, allocationSize = 1)
     @Column(nullable = false, updatable = false)
-    private Long courseid;
-    private String coursename;
-    private String courselevel;
-    private Long courseduration;
-    private String coursedescription;
-    private Long enrolledcount;
-    private String imageUrl;
-    private Long instructorid;
+    private Long courseId;
+    private String courseName;
+    private String courseDescription;
+    private Long instructorId;
     
     
     public Course() {
     }
 
-    public Course(String coursename, String courselevel, Long courseduration, String coursedescription, Long enrolledcount, String imageUrl, Long instructorid) {
-        this.coursename = coursename;
-        this.courselevel = courselevel;
-        this.courseduration = courseduration;
-        this.coursedescription = coursedescription;
-        this.enrolledcount = enrolledcount;
-        this.imageUrl = imageUrl;
-        this.instructorid = instructorid;
+    public Course(Long courseId, String courseName, String courseDescription, Long instructorId) {
+        this.courseId=courseId;
+        this.courseName = courseName;
+        this.courseDescription = courseDescription;
+        this.instructorId = instructorId;
     }
 
-    public Long getCourseid() {
-        return courseid;
+    public Long getCourseId() {
+        return courseId;
     }
 
-    public void setCourseid(Long courseid) {
-        this.courseid = courseid;
+    public void setCourseId(Long courseId) {
+        this.courseId = courseId;
     }
 
-    public String getCoursename() {
-        return coursename;
+    public String getCourseName() {
+        return courseName;
     }
 
-    public void setCoursename(String coursename) {
-        this.coursename = coursename;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
-    public String getCourselevel() {
-        return courselevel;
+     public String getCourseDescription() {
+        return courseDescription;
     }
 
-    public void setCourselevel(String courselevel) {
-        this.courselevel = courselevel;
+    public void setCourseDescription(String courseDescription) {
+        this.courseDescription = courseDescription;
     }
 
-    public Long getCourseduration() {
-        return courseduration;
+    
+    public Long getInstructorId() {
+        return instructorId;
     }
 
-    public void setCourseduration(Long courseduration) {
-        this.courseduration = courseduration;
-    }
-
-    public String getCoursedescription() {
-        return coursedescription;
-    }
-
-    public void setCoursedescription(String coursedescription) {
-        this.coursedescription = coursedescription;
-    }
-
-    public Long getEnrolledcount() {
-        return enrolledcount;
-    }
-
-    public void setEnrolledcount(Long enrolledcount) {
-        this.enrolledcount = enrolledcount;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-    public Long getInstructorid() {
-        return instructorid;
-    }
-
-    public void setInstructorid(Long instructorid) {
-        this.instructorid = instructorid;
+    public void setInstructorId(Long instructorId) {
+        this.instructorId = instructorId;
     }
             
     @Override
     public String toString() {
-        return "Courses [courseid=" + courseid 
-            + ", coursename=" + coursename 
-            + ", courselevel=" + courselevel
-            + ", courseduration=" + courseduration 
-            + ", coursedescription=" + coursedescription 
-            + ", enrolledcount=" + enrolledcount 
-            + ", imageUrl=" + imageUrl
-            + ", instructorid=" + instructorid + "]";
+        return "Courses [courseId=" + courseId 
+            + ", courseName=" + courseName 
+            + ", courseDescription=" + courseDescription 
+            + ", instructorId=" + instructorId + "]";
 
     }
 
