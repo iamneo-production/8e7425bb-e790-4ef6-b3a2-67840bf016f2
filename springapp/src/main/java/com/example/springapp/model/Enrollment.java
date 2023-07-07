@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-package main.java.com.example.springapp.model;
-
-public class Enrollment {
-    private Long id;
-    private Long courseid;
-    private Long Instructorid;
-    
-    public Enrollment() {
-    }
-    
-    
-=======
 package com.example.springapp.model;
 
 import javax.persistence.Column;
@@ -61,5 +48,4 @@ public class Enrollment {
 	public void setCourseId(Long courseId) {
 		this.courseId = courseId;
 	}
->>>>>>> c737eb22183f83eeb3461c1570f602b766a530a4
 }
