@@ -1,15 +1,12 @@
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/security/ResourceNotFoundException.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/PaymentService.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/SpringappApplication.java
+
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/CourseController.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/SpringappApplication.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Enrollment.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Course.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/LessonServiceImpl.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Payment.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/PaymentRepository.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/EnrollmentRepository.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/LessonService.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/EnrollmentController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/LessonRepository.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/CourseRepository.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/PaymentController.java
