@@ -37,7 +37,7 @@ public class CourseController {
     }
 
     // To add a new course
-    @PostMapping("/add")
+    @PostMapping
     @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Course> addCourse(@RequestBody Course course) {
         Course newCourse = courseService.addCourse(course);
@@ -53,18 +53,18 @@ public class CourseController {
     }
 
     // To delete the course based on courseid
-    @DeleteMapping("/delete/{courseid}")
+    @DeleteMapping("/delete/{courseId}")
     @CrossOrigin(origins = "http://localhost:4200")
-    public ResponseEntity<?> deleteCourses(@PathVariable("courseid") Long courseid) {
-        courseService.deleteCourses(courseid);
+    public ResponseEntity<?> deleteCourses(@PathVariable("courseId") Long courseId) {
+        courseService.deleteCourses(courseId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     // To get the course based on courseid
-    @GetMapping("/{courseid}")
+    @GetMapping("/{courseId}")
     @CrossOrigin(origins = "http://localhost:4200")
-    public ResponseEntity<Course> getCourseByCourseid(@PathVariable("courseid") Long courseid) {
-        Course course = courseService.getCourseByCourseid(courseid);
+    public ResponseEntity<Course> getCourseByCourseId(@PathVariable("courseId") Long courseId) {
+        Course course = courseService.getCourseByCourseId(courseId);
         return new ResponseEntity<>(course, HttpStatus.OK);
     }
 
