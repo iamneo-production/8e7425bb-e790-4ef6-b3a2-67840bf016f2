@@ -13,12 +13,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name="course")
 public class Course implements Serializable {
-    // @Id
-    // @GeneratedValue(generator = "courses_gen", strategy = GenerationType.AUTO)
-    // @SequenceGenerator(name = "courses_gen", sequenceName = "courses_sequence", initialValue = 1, allocationSize = 1)
-    // @Column(nullable = false, updatable = false)
+
     @Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(generator = "course_gen", strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "course_gen", sequenceName = "course_sequence", initialValue = 1, allocationSize = 1)
+    @Column(nullable = false, updatable = false)
     private Long courseId;
     private String courseName;
     private String courseDescription;
