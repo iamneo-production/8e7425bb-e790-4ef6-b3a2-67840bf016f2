@@ -1,4 +1,4 @@
-package main.java.com.example.springapp.security;
+package com.example.springapp.security;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 

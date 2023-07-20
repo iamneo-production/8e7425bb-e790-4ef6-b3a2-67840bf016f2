@@ -1,20 +1,22 @@
-package main.java.com.example.springapp.model;
+package com.example.springapp.model;
 
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
-@Table(name="payment")
+@Table(name="Payment")
 public class Payment {
 
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, updatable = false)
     private Long id;
 
     @Column(name = "user_Id")
@@ -27,6 +29,7 @@ public class Payment {
     private Long courseId;
 
     @Column(name = "date")
+    @Temporal(TemporalType.DATE)
     private Date date;
 
     public Payment() {
