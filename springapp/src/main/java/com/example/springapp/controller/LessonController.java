@@ -45,7 +45,7 @@ public class LessonController {
         return new ResponseEntity<>(newLesson, HttpStatus.CREATED);
     }
 
-    // To update the course
+    // To update the lesson
     @PutMapping("/update")
     @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Lesson> updateLesson(@RequestBody Lesson lesson) {
@@ -66,6 +66,14 @@ public class LessonController {
     @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<List<Lesson>> getLessonByCourseId(@PathVariable("courseId") Long courseId) {
         List<Lesson> lesson = lessonService.getLessonByCourseId(courseId);
+        return new ResponseEntity<>(lesson, HttpStatus.OK);
+    }
+
+    // To display the lessons based on lessonid
+    @GetMapping("/lesson/{lessonId}")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public ResponseEntity<List<Lesson>> getLessonByLessonId(@PathVariable("lessonId") Long lessonId) {
+        List<Lesson> lesson = lessonService.getLessonByLessonId(lessonId);
         return new ResponseEntity<>(lesson, HttpStatus.OK);
     }
 
