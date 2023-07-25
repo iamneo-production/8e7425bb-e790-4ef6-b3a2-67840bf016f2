@@ -13,6 +13,8 @@ public interface LessonRepository extends JpaRepository<Lesson, Long> {
     void deleteLessonByLessonId(Long lessonId);
     
     List<Lesson> getLessonByCourseId(Long courseId);
+
+    List<Lesson> getLessonByLessonId(Long lessonId);
 }
 
 

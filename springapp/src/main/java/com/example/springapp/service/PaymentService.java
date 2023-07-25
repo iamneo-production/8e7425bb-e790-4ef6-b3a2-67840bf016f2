@@ -1,11 +1,11 @@
-package main.java.com.example.springapp.service;
+package com.example.springapp.service;
 
-import main.java.com.example.springapp.model.Payment;
-import main.java.com.example.springapp.repository.PaymentRepository;
-import main.java.com.example.springapp.security.ResourceNotFoundException;
+import java.util.Optional;
+import com.example.springapp.model.Payment;
+import com.example.springapp.repository.PaymentRepository;
+import com.example.springapp.security.ResourceNotFoundException;
 
 import org.springframework.stereotype.Service;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Service
