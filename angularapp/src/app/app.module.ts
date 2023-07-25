@@ -31,6 +31,7 @@ import { StudentCoursesComponent } from './components/student_components/student
 import { StudentLessonsComponent } from './components/student_components/student-lessons/student-lessons.component';
 import { TakeAssignmentComponent } from './components/student_components/take-assignment/take-assignment.component';
 import { ViewAssignmentComponent } from './components/student_components/view-assignment/view-assignment.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -64,11 +65,13 @@ import { ViewAssignmentComponent } from './components/student_components/view-as
     TakeAssignmentComponent,
     ViewAssignmentComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
