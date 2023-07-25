@@ -8,7 +8,7 @@ import { Assignment, AssignmentQuestion, CompletedAssignmentData } from '../mode
 })
 export class AssignmentService {
 
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = 'https://8080-cbbdbceccaaadcdddffaedcbcabfdfafdade.project.examly.io';
 
   constructor(private http:HttpClient) { }
 

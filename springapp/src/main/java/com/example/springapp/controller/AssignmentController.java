@@ -18,7 +18,7 @@ import com.example.springapp.model.Assignment;
 import com.example.springapp.service.AssignmentService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://8081-cbbdbceccaaadcdddffaedcbcabfdfafdade.project.examly.io")
 @RequestMapping("/assignment")
 public class AssignmentController {
 

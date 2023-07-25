@@ -10,11 +10,10 @@ import { Payment } from "../models/payment";
 
 export class PaymentService {
 
-    private baseUrl: string;
 
-    constructor(private httpClient: HttpClient) {
-        this.baseUrl = "http://localhost:8080/payment";
-    }
+    constructor(private httpClient: HttpClient) {}
+    
+    private baseUrl = 'https://8080-cbbdbceccaaadcdddffaedcbcabfdfafdade.project.examly.io';
 
     //to post new payment details
     public makePayment(payment: Payment): Observable<any> {

@@ -21,7 +21,7 @@ import com.example.springapp.repository.EnrollmentRepository;
 import com.example.springapp.service.CourseService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://8081-cbbdbceccaaadcdddffaedcbcabfdfafdade.project.examly.io")
 @RequestMapping("/enrollment")
 public class EnrollmentController {
 	@Autowired
@@ -38,7 +38,6 @@ public class EnrollmentController {
 	}
 	
 	@GetMapping("/{id}")
-    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Enrollment> getEnrollmentbyId(@PathVariable("Id") Long id) {
         Enrollment enrollment = enrollmentRepository.findById(id).get();
         return new ResponseEntity<>(enrollment, HttpStatus.OK);

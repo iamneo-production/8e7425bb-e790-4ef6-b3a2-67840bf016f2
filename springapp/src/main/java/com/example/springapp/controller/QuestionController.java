@@ -17,9 +17,7 @@ import com.example.springapp.repository.QuestionRepository;
 
 @RestController
 @RequestMapping("/questions")
-@CrossOrigin("http://localhost:4200")
-
-
+@CrossOrigin(origins = "https://8081-cbbdbceccaaadcdddffaedcbcabfdfafdade.project.examly.io")
 public class QuestionController {
     @Autowired
     public QuestionRepository questionRepository;

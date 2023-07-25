@@ -9,7 +9,7 @@ import { Reply } from '../models/reply';
 })
 export class DiscussionService {
 
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = 'https://8080-cbbdbceccaaadcdddffaedcbcabfdfafdade.project.examly.io';
 
   constructor(private httpClient: HttpClient) { }
  

@@ -19,6 +19,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @RestController
+@CrossOrigin(origins = "https://8081-cbbdbceccaaadcdddffaedcbcabfdfafdade.project.examly.io")
 @RequestMapping("/payment")
 public class PaymentController {
     public PaymentService paymentService;
@@ -29,19 +30,16 @@ public class PaymentController {
     }
 
     @PostMapping()
-    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Payment> savePayment(@RequestBody Payment payment){
         return new ResponseEntity<Payment>(paymentService.savePayment(payment), HttpStatus.CREATED);
     }
 
     @GetMapping("{id}")
-    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Payment> getPaymentById(@PathVariable("id") Long paymentId){
         return new ResponseEntity<Payment>(paymentService.getPaymentById(paymentId), HttpStatus.OK);
     }
 
     @GetMapping("/detail/{id}")
-    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<List<Payment>> getPaymentsByUserId(@PathVariable Long id) {
         List<Payment> payments = paymentService.getPaymentsByUserId(id);
         return ResponseEntity.ok(payments);
