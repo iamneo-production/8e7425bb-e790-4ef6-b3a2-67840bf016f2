@@ -68,4 +68,10 @@ public class CourseController {
         return new ResponseEntity<>(course, HttpStatus.OK);
     }
 
+    @GetMapping("/instructor/{instructorId}")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public ResponseEntity<List<Course>> getCourseByInstructorId(@PathVariable("instructorId") Long instructorId) {
+        List<Course> course = courseService.getCoursesByInstructorId(instructorId);
+        return new ResponseEntity<>(course, HttpStatus.OK);
+    }
 }
