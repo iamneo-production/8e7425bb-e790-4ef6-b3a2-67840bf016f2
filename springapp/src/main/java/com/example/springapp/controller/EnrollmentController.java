@@ -21,7 +21,33 @@ import com.example.springapp.repository.EnrollmentRepository;
 import com.example.springapp.service.CourseService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+//santhosh
+@CrossOrigin(origins = "https://8081-cbbdbceccaaadcdddffaedcbcabfdfafdade.project.examly.io")
+
+//ramesh
+//@CrossOrigin(origins = "https://8081-febcaabfefeacfadcdddffaedcbcabfdfafdade.project.examly.io")
+
+//rithick
+//@CrossOrigin(origins = "https://8081-ccfbbdadfbadcdddffaedcbcabfdfafdade.project.examly.io")
+
+//oviya
+//@CrossOrigin(origins = "https://8081-bfbbbeacbadcdddffaedcbcabfdfafdade.project.examly.io")
+
+//joshika
+//@CrossOrigin(origins = "https://8081-fdfedfdaaaacfedbadcdddffaedcbcabfdfafdade.project.examly.io")
+
+//sumanth
+//@CrossOrigin(origins = "https://8081-daeacaadbcfaeadcdddffaedcbcabfdfafdade.project.examly.io")
+
+//mrinal
+//@CrossOrigin(origins = "https://8081-fbbfbccabebadcdddffaedcbcabfdfafdade.project.examly.io")
+
+//muskan
+//@CrossOrigin(origins = "https://8081-ddefcefdabfbdadcdddffaeeaeaadbdbabf.project.examly.io")
+
+//rishik
+//@CrossOrigin(origins = "https://8081-caccdedfdbdccefeadcdddffaedcbcabfdfafdade.project.examly.io")
+
 @RequestMapping("/enrollment")
 public class EnrollmentController {
 	@Autowired
@@ -38,7 +64,6 @@ public class EnrollmentController {
 	}
 	
 	@GetMapping("/{id}")
-    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Enrollment> getEnrollmentbyId(@PathVariable("Id") Long id) {
         Enrollment enrollment = enrollmentRepository.findById(id).get();
         return new ResponseEntity<>(enrollment, HttpStatus.OK);
