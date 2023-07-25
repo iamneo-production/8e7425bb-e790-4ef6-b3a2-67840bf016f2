@@ -70,10 +70,10 @@ public class LessonController {
     }
 
     // To display the lessons based on lessonid
-    @GetMapping("/lesson/{lessonId}")
+    @GetMapping("/getbyid/{lessonId}")
     @CrossOrigin(origins = "http://localhost:4200")
-    public ResponseEntity<List<Lesson>> getLessonByLessonId(@PathVariable("lessonId") Long lessonId) {
-        List<Lesson> lesson = lessonService.getLessonByLessonId(lessonId);
+    public ResponseEntity<Lesson> getLessonById(@PathVariable("lessonId") Long lessonId){
+        Lesson lesson = lessonService.getLessonById(lessonId);
         return new ResponseEntity<>(lesson, HttpStatus.OK);
     }
 

@@ -17,6 +17,6 @@ public interface LessonService {
 
     public List<Lesson> getLessonByCourseId(Long courseId);
 
-    public List<Lesson> getLessonByLessonId(Long lessonId);
+    public Lesson getLessonById(Long lessonId);
 }
 

@@ -9,8 +9,8 @@ com/example/springapp/model/Reply.class
 com/example/springapp/controller/PaymentController.class
 com/example/springapp/model/Enrollment.class
 com/example/springapp/security/ResourceNotFoundException.class
-com/example/springapp/SpringappApplication.class
 com/example/springapp/service/CourseServiceImpl.class
+com/example/springapp/SpringappApplication.class
 com/example/springapp/service/LessonService.class
 com/example/springapp/controller/UserinfoController.class
 com/example/springapp/model/Userinfo.class
