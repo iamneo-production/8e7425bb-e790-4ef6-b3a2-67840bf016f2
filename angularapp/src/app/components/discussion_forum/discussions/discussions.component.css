@@ -1,0 +1,27 @@
+.buttondesign{
+    border:1px solid #5e17eb;
+    color:#5e17eb;
+}
+.buttondesign:hover{
+    background-color: #5e17eb;
+    color:white;
+}
+
+.savebutton{
+    background-color: #5e17eb;
+    color:white;
+}
+.savebutton:hover{
+    background-color: #4a0cc6;
+    color:white;
+}
+.card{
+    border-radius:5px;
+
+}
+
+.style:hover{
+    color: white;
+    background-color: #5e17eb;
+    border-radius:50%;
+}
