@@ -1,0 +1,35 @@
+.form-control{
+    border: 2px solid #b5b5b5;
+}
+
+.form-control:focus{
+    box-shadow: none;
+    border:2px solid #5e17eb;
+}
+
+.btn{
+    color:#5e17eb;
+    border-color: #5e17eb;
+    
+}
+.btn:hover{
+    color:white;
+    background-color: rgb(95, 25, 235);
+}
+
+.link{
+    text-decoration: none;
+}
+
+.bg{
+    padding: 4.45%;
+}
+
+.shadows{
+    box-shadow: rgba(95, 25, 235,0.1) 0px 1px 20px, rgba(95, 25, 235,0.1) 0px 8px 24px, rgba(95, 25, 235,0.1) 0px 16px 38px;
+    border-radius: 15px;
+}
+
+.focused:focus{
+    box-shadow: none;
+}

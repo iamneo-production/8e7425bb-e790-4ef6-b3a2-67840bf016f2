@@ -1,0 +1,12 @@
+.btn-primary{
+    background-color: #5e17eb;
+    color:#fff;
+    border:2px solid #fff;
+    font-weight: 600;
+  }
+  
+  .btn-primary:hover{
+    background-color: #fff;
+    color: #5e17eb;
+    border:2px solid #5e17eb;
+  }
