@@ -1,2 +1,5 @@
-export class Enrollment {
+export interface Enrollment {
+    id:number;
+    courseId:number;
+    userId:number;
 }
