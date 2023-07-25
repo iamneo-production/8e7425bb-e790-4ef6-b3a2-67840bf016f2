@@ -8,7 +8,7 @@ import { Course } from '../models/course';
 })
 export class CourseServiceImpl {
 
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = 'https://8080-cbbdbceccaaadcdddffaedcbcabfdfafdade.project.examly.io';
 
   constructor(private http: HttpClient) { }
 

@@ -30,7 +30,7 @@ public class CourseController {
     }
     // To get all the courses
     @GetMapping
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://8081-cbbdbceccaaadcdddffaedcbcabfdfafdade.project.examly.io")
     public ResponseEntity<List<Course>> getAllCourses() {
         List<Course> course = courseService.findAllCourses();
         return new ResponseEntity<>(course, HttpStatus.OK);
