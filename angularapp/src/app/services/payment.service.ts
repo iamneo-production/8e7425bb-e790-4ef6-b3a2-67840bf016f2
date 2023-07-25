@@ -17,11 +17,11 @@ export class PaymentService {
 
     //to post new payment details
     public makePayment(payment: Payment): Observable<any> {
-        return this.httpClient.post(`${this.baseUrl}`, payment);
+        return this.httpClient.post(`${this.baseUrl}/payment`, payment);
     }
 
     //to get all payment details by using id
     public getPaymentList(id: number): Observable<Payment[]> {
-        return this.httpClient.get<Payment[]>(`${this.baseUrl}/detail/${id}`);
+        return this.httpClient.get<Payment[]>(`${this.baseUrl}/payment/detail/${id}`);
     }
 }
