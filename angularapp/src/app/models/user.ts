@@ -1,2 +1,5 @@
-export class User {
+export interface User {
+    id:number;
+    email:string;
+    role:string;
 }
