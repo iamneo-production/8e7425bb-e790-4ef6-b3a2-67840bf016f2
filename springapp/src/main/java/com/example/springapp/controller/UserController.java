@@ -18,7 +18,7 @@ import com.example.springapp.repository.UserRepository;
 
 @RestController
 @RequestMapping("/users")
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin(origins = "https://8081-cbbdbceccaaadcdddffaedcbcabfdfafdade.project.examly.io")
 public class UserController {
     @Autowired
     public UserRepository userRepository;

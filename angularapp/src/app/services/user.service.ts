@@ -9,14 +9,16 @@ import { Userinfo } from '../models/userinfo';
 })
 export class UserService {
 
-  private baseUrl = 'https://8080-cbbdbceccaaadcdddffaedcbcabfdfafdade.project.examly.io';
-
+  
   constructor(private httpClient: HttpClient) { }
+  
+  private baseUrl = 'https://8080-cbbdbceccaaadcdddffaedcbcabfdfafdade.project.examly.io';
 
   //to login existing user
   loginUser(loginForm: FormGroup): Observable<any> {
     let url = `${this.baseUrl}/users/login`;
-    return this.httpClient.post(url, loginForm.value);
+    let user = {email:'san',password:'112233'}
+    return this.httpClient.post(url, user);
   }
 
   //to signup new user

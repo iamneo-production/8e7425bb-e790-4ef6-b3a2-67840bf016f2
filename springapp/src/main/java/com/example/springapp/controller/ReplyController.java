@@ -17,7 +17,7 @@ import com.example.springapp.repository.ReplyRepository;
 
 @RestController
 @RequestMapping("/reply")
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin(origins = "https://8081-cbbdbceccaaadcdddffaedcbcabfdfafdade.project.examly.io")
 public class ReplyController {
     @Autowired
     public ReplyRepository replyRepository;
