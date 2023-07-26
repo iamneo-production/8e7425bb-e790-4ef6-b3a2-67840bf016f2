@@ -27,6 +27,7 @@ import { StudentCoursesComponent } from './components/student_components/student
 import { StudentLessonsComponent } from './components/student_components/student-lessons/student-lessons.component';
 import { TakeAssignmentComponent } from './components/student_components/take-assignment/take-assignment.component';
 import { ViewAssignmentComponent } from './components/student_components/view-assignment/view-assignment.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
@@ -34,29 +35,29 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'forgotpass', component: ForgotpasswordComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'help', component: HelpnsupportComponent },
-  { path: 'discussions', component: DiscussionsComponent },
-  { path: 'replies', component: RepliesComponent },
-  { path: 'instructorCourses', component: InstructorCoursesComponent },
-  { path: 'studentCourses', component: StudentCoursesComponent },
-  { path: 'instructorLessons/:courseId', component: InstructorLessonsComponent },
-  { path: 'instructorHome', component: InstructorDashboardComponent },
-  { path: 'studentHome', component: StudentDashboardComponent },
-  { path: 'SummaryPage/:id', component: SummaryComponent },
-  { path: 'Payment/:id', component: PaymentComponent },
-  { path: 'PaymentProcessing', component: PaymentProcessingComponent },
-  { path: 'PaymentSuccessfull', component: PaymentSuccessfulComponent },
-  { path: 'lessons', component: StudentLessonsComponent },
-  { path: 'lessondescription/:lessonId', component: LessondescriptionComponent },
-  { path: 'viewAssignments', component: ViewAssignmentComponent },
-  { path: 'assignments', component: AssignmentComponent },
-  { path: 'takeAssignment/:assignmentId', component: TakeAssignmentComponent },
-  { path: 'allAssignments', component: AllAssignmentsComponent },
-  { path: 'viewPostedassignment/:id', component: ViewPostedassignmentComponent },
-  { path: 'assignmentReport/:id', component: AssignmentReportComponent },
-  { path: 'paymentReport', component: PaymentReportComponent },
-  { path: 'paymentDetails/:courseId/:paymentId', component: PaymentDetailComponent }
+  { path: 'about', component: AboutComponent, canActivate: [AuthGuard]},
+  { path: 'help', component: HelpnsupportComponent, canActivate: [AuthGuard] },
+  { path: 'discussions', component: DiscussionsComponent, canActivate: [AuthGuard] },
+  { path: 'replies', component: RepliesComponent, canActivate: [AuthGuard] },
+  { path: 'instructorCourses', component: InstructorCoursesComponent, canActivate: [AuthGuard] },
+  { path: 'studentCourses', component: StudentCoursesComponent, canActivate: [AuthGuard] },
+  { path: 'instructorLessons/:courseId', component: InstructorLessonsComponent, canActivate: [AuthGuard] },
+  { path: 'instructorHome', component: InstructorDashboardComponent, canActivate: [AuthGuard] },
+  { path: 'studentHome', component: StudentDashboardComponent, canActivate: [AuthGuard] },
+  { path: 'SummaryPage/:id', component: SummaryComponent, canActivate: [AuthGuard] },
+  { path: 'Payment/:id', component: PaymentComponent, canActivate: [AuthGuard] },
+  { path: 'PaymentProcessing', component: PaymentProcessingComponent, canActivate: [AuthGuard] },
+  { path: 'PaymentSuccessfull', component: PaymentSuccessfulComponent, canActivate: [AuthGuard] },
+  { path: 'lessons', component: StudentLessonsComponent, canActivate: [AuthGuard] },
+  { path: 'lessondescription/:lessonId', component: LessondescriptionComponent, canActivate: [AuthGuard] },
+  { path: 'viewAssignments', component: ViewAssignmentComponent, canActivate: [AuthGuard] },
+  { path: 'assignments', component: AssignmentComponent, canActivate: [AuthGuard] },
+  { path: 'takeAssignment/:assignmentId', component: TakeAssignmentComponent, canActivate: [AuthGuard] },
+  { path: 'allAssignments', component: AllAssignmentsComponent, canActivate: [AuthGuard] },
+  { path: 'viewPostedassignment/:id', component: ViewPostedassignmentComponent, canActivate: [AuthGuard] },
+  { path: 'assignmentReport/:id', component: AssignmentReportComponent, canActivate: [AuthGuard] },
+  { path: 'paymentReport', component: PaymentReportComponent, canActivate: [AuthGuard] },
+  { path: 'paymentDetails/:courseId/:paymentId', component: PaymentDetailComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
