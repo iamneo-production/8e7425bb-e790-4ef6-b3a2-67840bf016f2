@@ -108,9 +108,13 @@ public class EnrollmentController {
 
 	@DeleteMapping("/deleteAllByCourseId/{courseId}")
 	public ResponseEntity<?> deleteAllEnrollmentByCourseId(@PathVariable("courseId") Long courseId){
-		enrollmentRepository.deleteAllByCourseId(courseId);
+		List<Enrollment> enrollments = enrollmentRepository.findEnrollmentsByCourseId(courseId);
+		for(int i=0;i<enrollments.size();i++){
+			enrollmentRepository.deleteById(enrollments.get(i).getId());
+		}
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+
 
 
 }
