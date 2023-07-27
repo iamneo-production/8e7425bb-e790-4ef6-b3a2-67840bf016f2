@@ -2,7 +2,7 @@
 <!-- Assignment report -->
 <div class="container my-3 p-3">
     <p class="fw-semibold fs-3 py-0 mb-3"><span class="mx-2 px-1 style" (click)="onback()"><i class="bi bi-arrow-left-short"></i></span>Assignment Report</p>
-    <div class="card" *ngFor="let assignment of completedAssignment.reverse()">
+    <div class="card my-3" *ngFor="let assignment of completedAssignment.reverse()">
         <div class="card-header">
             <h5 class="card-title"><b>User ID: </b>{{assignment.userId}}</h5>
         </div>
