@@ -21,8 +21,8 @@
         <div class="card h-100" style="background-color: aliceblue;">
           <img src="../../../../assets/lesson.jpg" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">{{lesson.lessonName}}</h5>
-            <p class="card-text">{{lesson.lessonDescription}}</p>
+            <h5 class="card-title">Lesson Name: {{lesson.lessonName}}</h5>
+            <p class="card-text">Description: {{lesson.lessonDescription}}</p>
           </div>
           <div class="card-footer" style="background-color: aliceblue;">
             <a class ="btn btn-primary w-100" type="button" data-bs-toggle="modal" data-bs-target="#editLesson" (click)="getLesson(lesson.lessonId)"> Edit Lesson </a>
