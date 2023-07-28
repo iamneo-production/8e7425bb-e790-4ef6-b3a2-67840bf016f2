@@ -14,7 +14,7 @@ export class PaymentService {
     constructor(private httpClient: HttpClient) {}
     
   //santhosh
-  private baseUrl = 'https://8080-cbbdbceccaaadcdddffaedcbcabfdfafdade.project.examly.io';
+//   private baseUrl = 'https://8080-cbbdbceccaaadcdddffaedcbcabfdfafdade.project.examly.io';
 
   //ramesh
   //private baseUrl = 'https://8080-febcaabfefeacfadcdddffaedcbcabfdfafdade.project.examly.io';
@@ -32,7 +32,7 @@ export class PaymentService {
   //private baseUrl = 'https://8080-daeacaadbcfaeadcdddffaedcbcabfdfafdade.project.examly.io';
 
   //mrinal
-  //private baseUrl = 'https://8080-fbbfbccabebadcdddffaedcbcabfdfafdade.project.examly.io';
+  private baseUrl = 'https://8080-fbbfbccabebadcdddffaedcbcabfdfafdade.project.examly.io';
 
   //muskan
   //private baseUrl = 'https://8080-ddefcefdabfbdadcdddffaeeaeaadbdbabf.project.examly.io';
@@ -45,7 +45,7 @@ export class PaymentService {
         return this.httpClient.post(`${this.baseUrl}/payment`, payment);
     }
 
-    //to get all payment details by using id
+    //to get all payment details by using a particular id
     public getPaymentList(id: number): Observable<Payment[]> {
         return this.httpClient.get<Payment[]>(`${this.baseUrl}/payment/detail/${id}`);
     }
