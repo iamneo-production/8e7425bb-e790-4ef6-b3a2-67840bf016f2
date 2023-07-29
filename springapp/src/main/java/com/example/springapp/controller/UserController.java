@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.springapp.model.User;
-import com.example.springapp.repository.UserRepository;
+import com.example.springapp.service.UserService;
 
 @RestController
 @RequestMapping("/users")
@@ -47,11 +47,11 @@ import com.example.springapp.repository.UserRepository;
 
 public class UserController {
     @Autowired
-    public UserRepository userRepository;
+    public UserService userService;
 
     @PostMapping("/login")
     public ResponseEntity<User> loginUser(@RequestBody User receivedData) {
-        User user = userRepository.findUserByEmail(receivedData.getEmail());
+        User user = userService.getUserByEmail(receivedData.getEmail());
         if (user.getPassword().equals(receivedData.getPassword())) {
             return new ResponseEntity<User>(user, HttpStatus.OK);
         }
@@ -60,10 +60,10 @@ public class UserController {
 
     @PutMapping("")
     public ResponseEntity<?> forgotUser(@RequestBody User receivedData) {
-        User user = userRepository.findUserByEmail(receivedData.getEmail());
+        User user = userService.getUserByEmail(receivedData.getEmail());
         if (user != null) {
             user.setPassword(receivedData.getPassword());
-            userRepository.save(user);
+            userService.addUser(user);
             return new ResponseEntity<>(HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -71,9 +71,9 @@ public class UserController {
 
     @PostMapping("/register")
     public ResponseEntity<?> signup(@RequestBody User receivedData) {
-        User user = userRepository.findUserByEmail(receivedData.getEmail());
+        User user = userService.getUserByEmail(receivedData.getEmail());
         if (user == null) {
-            user = userRepository.save(receivedData);
+            user = userService.addUser(receivedData);
             return new ResponseEntity<>(user,HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.CONFLICT);
@@ -81,7 +81,7 @@ public class UserController {
 
     @GetMapping("/id")
     public ResponseEntity<User> getUserById(@RequestParam("id") long id) {
-        User user = userRepository.findById(id).get();
+        User user = userService.getUserById(id);
         if (user != null) {
             user.setPassword(null);
             return new ResponseEntity<>(user, HttpStatus.OK);
@@ -92,13 +92,12 @@ public class UserController {
 
     @DeleteMapping("")
     public ResponseEntity<?> DeleteUserById(@RequestParam("id") long id) {
-        User user = userRepository.findById(id).get();
+        User user = userService.getUserById(id);
         if (user != null) {
-            userRepository.deleteById(id);
+            userService.deletUser(id);
             return new ResponseEntity<>(HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-
 }
