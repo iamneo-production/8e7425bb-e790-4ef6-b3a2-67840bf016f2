@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+
+<!-- display replies -->
+<div class="container mt-3 p-3">
+  <p class="fw-semibold fs-3 py-0"><span class="me-2 px-1 style" routerLink="/discussions"><i
+        class="bi bi-arrow-left-short"></i></span>Replies</p>
+  <div class="p-0 mt-4">
+    <div class="card ps-2 pt-2 mb-3">
+      <h5 class="text-title">{{question.question}}</h5>
+      <p class="text-muted">Raised by {{question.userName}}</p>
+    </div>
+    <button class="btn btn-sm buttondesign" type="button" data-bs-toggle="modal" data-bs-target="#addreply"> + Give
+      Reply</button>
+    <hr>
+    <div>
+      <h5 class="pb-3">Replies: <span class="badge bg-primary">{{repliescount}}</span> </h5>
+      <div class="ms-4" *ngFor="let reply of replies">
+        <div *ngIf="reply.questionId===question.id">
+          <h6 class="pt-2 pb-1" style="font-size: 20px;">{{reply.reply}}</h6>
+          <p class="text-muted pb-2" style="font-size: 15px;">Replied by {{reply.replierName}} <span
+              class="badge bg rounded-pill" *ngIf="reply.role==='instructor'">Instructor Reply</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- display replies ends-->
+
+<!-- Add reply modal -->
+<div class="modal fade" id="addreply" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Give Reply</h1>
+      </div>
+      <div class="modal-body">
+        <label for="question">Reply:</label>
+        <br>
+        <textarea class="w-100" placeholder="Your reply goes here..." [(ngModel)]="addReply"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn savebutton" (click)="onsave()" data-bs-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Add reply modal ends -->

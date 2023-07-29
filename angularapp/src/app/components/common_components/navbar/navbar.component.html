@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+
+    <!-- navbar container -->
+    <div class="container-fluid mx-5">
+  
+      <!-- logo -->
+      <a class="navbar-brand" (click)="onUserClick()"><img src="../../../assets/navlogo.png" alt="" width="200px"></a>
+      <!-- logo ends-->
+  
+      <!-- Collapse control button -->
+      <button class="navbar-toggler" (click)="onclick()" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent">
+        <i [class]="icons"></i>
+      </button>
+      <!-- Collapse control button ends-->
+  
+      <!-- collapsable navbar contents -->
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-medium text-center">
+          <li class="nav-item me-3">
+            <a *ngIf="role=='student'" class="nav-link anim selected" routerLink="/studentHome" routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact:true}">Home</a>
+            <a *ngIf="role=='instructor'" class="nav-link anim selected" routerLink="/instructorHome"
+              routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+          </li>
+          <li class="nav-item me-3">
+            <a *ngIf="role=='student'" class="nav-link anim" routerLinkActive="active"
+              routerLink="/studentCourses">Courses</a>
+            <a *ngIf="role=='instructor'" class="nav-link anim" routerLinkActive="active"
+              routerLink="/instructorCourses">Courses</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link anim" routerLinkActive="active" routerLink="/about">About</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link anim" routerLinkActive="active" routerLink="/help">Help</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-person-circle"></i> {{username}}
+            </a>
+            <ul class="dropdown-menu p-0 text-center text-lg-start">
+              <li><a class="dropdown-item py-2 ps-2" type="button" routerLink="/paymentReport" *ngIf="role=='student'"><i
+                    class="bi bi-card-checklist me-1"></i>Payment Report</a></li>
+              <li><a class="dropdown-item py-2 ps-2" type="button" data-bs-toggle="modal"
+                  data-bs-target="#deleteAccountModal"><i class="bi bi-trash3 me-1"></i>Delete Account</a></li>
+              <li><a class="dropdown-item py-2 ps-2" (click)="logout()"><i class="bi bi-box-arrow-left me-1"></i>
+                  Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+  
+      </div>
+      <!-- collapsable navbar contents ends-->
+  
+    </div>
+    <!-- navbar container ends-->
+  
+  </nav>
+  
+  <!-- Delete account modal -->
+  <div class="modal fade" id="deleteAccountModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header py-2">
+          <h1 class="modal-title fs-5 text-danger">Delete Account</h1>
+        </div>
+        <div class="modal-body py-3">
+          This action will delete your account permanently
+        </div>
+        <div class="modal-footer py-2">
+          <button type="button" class="btn btn-md btn-danger" (click)="deleteUser()"
+            data-bs-dismiss="modal">Confirm</button>
+          <button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Delete account modal ends-->

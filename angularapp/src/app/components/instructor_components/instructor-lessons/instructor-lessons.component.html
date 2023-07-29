@@ -1,0 +1,108 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-3 p-3" id="main-container">
+  <p class="fw-semibold fs-3 py-2 m-0"><span class="mx-2 px-1 style" (click)="onback()"><i class="bi bi-arrow-left-short"></i></span>Manage Lessons</p>
+  <div class="card w-100 mb-3 bg">
+    <div class="card-body">
+        <h3 class="card-title pb-4"><b>Course Name:</b> {{course.courseName}}</h3>
+        <h6 class="card-text pb-2"><b>Course Id:</b> {{course.courseId}}</h6>
+        <h6 class="card-text pb-2"><b>Course Description:</b> {{course.courseDescription}}</h6>
+        <h6 class="card-text pb-2"><b>No. of Lessons: </b> {{lessons.length}}</h6>
+        <button class="btn btn-primary me-1" routerLink="/allAssignments">Assignments</button>
+        <button class="btn btn-primary" routerLink="/discussions">Discussions</button>
+    </div>
+</div>
+
+    <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addLesson">+ Add New Lesson</button>
+
+    <!-- View Lessons -->
+    <div class="row d-flex flex-column flex-md-row">
+      <div class="col-12 col-md-6 col-lg-3 my-2" *ngFor="let lesson of lessons">
+        <div class="card h-100" style="background-color: aliceblue;">
+          <img src="../../../../assets/lesson.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Lesson Name: {{lesson.lessonName}}</h5>
+            <p class="card-text">Description: {{lesson.lessonDescription}}</p>
+          </div>
+          <div class="card-footer" style="background-color: aliceblue;">
+            <a class ="btn btn-primary w-100" type="button" data-bs-toggle="modal" data-bs-target="#editLesson" (click)="getLesson(lesson.lessonId)"> Edit Lesson </a>
+            <a class ="btn btn-danger w-100" type="button" data-bs-toggle="modal" data-bs-target="#deletelesson" (click)="getLessonId(lesson.lessonId)"> Delete Lesson </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="lessons.length == 0" class="alert alert-info" role="alert">
+      <h4 style="color: black;">NO LESSONS!</h4>
+      <p>No Lessons were found for this course.</p>
+    </div>
+<!-- View Lessons Ends-->
+  </div>
+  
+
+
+  <!--Add Lesson Modal -->
+  <div class="modal fade" id="addLesson" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Add New Lesson</h1>
+        </div>
+        <div class="modal-body">
+          <label class="form-label">Lesson Name</label>
+          <input class="form-control"  type="text" [(ngModel)]="addLesson.lessonName">
+          <label class="form-label" >lesson Description</label>
+          <input class="form-control"  type="text" [(ngModel)]="addLesson.lessonDescription">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="onAddLesson()">Add Lesson</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--End of Add Lesson Modal -->
+
+<!--Edit Lesson Modal -->
+  <div class="modal fade" id="editLesson" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Edit Lesson Details</h1>
+        </div>
+        <div class="modal-body">
+          <label class="form-label">Lesson Name</label>
+          <input class="form-control" type="text" [(ngModel)]="editLesson.lessonName">
+          <label class="form-label">lesson Description</label>
+          <input class="form-control" type="text" [(ngModel)]="editLesson.lessonDescription">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="onEditLesson()">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--End of Edit Lesson Modal -->
+
+ <!--Delete Lesson Modal -->
+  <div class="modal fade" id="deletelesson" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Delete Lesson</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          This Action will delete the Lesson
+          <br>
+          Are you sure?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" (click)="onDeleteLesson()" data-bs-dismiss="modal">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ <!--End of Delete Lesson Modal -->
