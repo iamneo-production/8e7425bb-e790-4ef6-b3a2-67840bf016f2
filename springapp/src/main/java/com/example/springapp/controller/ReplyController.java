@@ -4,6 +4,8 @@ package com.example.springapp.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.springapp.model.Reply;
-import com.example.springapp.repository.ReplyRepository;
+import com.example.springapp.service.ReplyService;
 
 @RestController
 @RequestMapping("/reply")
@@ -46,16 +48,27 @@ import com.example.springapp.repository.ReplyRepository;
 
 public class ReplyController {
     @Autowired
-    public ReplyRepository replyRepository;
+    public ReplyService replyService;
 
     @PostMapping("/addreply")
-    public List<Reply> addreply(@RequestBody Reply receivedReply){
-        replyRepository.save(receivedReply);
-        return replyRepository.findRepliesbyQuestionId(receivedReply.getQuestionId());
+    public ResponseEntity<List<Reply>> addreply(@RequestBody Reply receivedReply){
+        try {
+            replyService.postReply(receivedReply);
+            List<Reply> replies = replyService.getAllRepliesByQuestionId(receivedReply.getQuestionId());
+            return new ResponseEntity<List<Reply>>(replies,HttpStatus.OK);
+        } 
+        catch (Exception e) {
+            throw new RuntimeException("Error is posting reply", e);
+        }
     }
     
+
     @GetMapping("/getAllreplies/{questionId}")
-    public List<Reply> getAllreplies(@PathVariable("questionId") Long questionId){
-        return replyRepository.findRepliesbyQuestionId(questionId);
+    public ResponseEntity<List<Reply>> getAllreplies(@PathVariable("questionId") Long questionId){
+        List<Reply> replies = replyService.getAllRepliesByQuestionId(questionId);
+        if(replies!=null){
+            return new ResponseEntity<List<Reply>>(replies,HttpStatus.OK);
+        }
+        throw new RuntimeException("Error in getting replies");
     }
 }
