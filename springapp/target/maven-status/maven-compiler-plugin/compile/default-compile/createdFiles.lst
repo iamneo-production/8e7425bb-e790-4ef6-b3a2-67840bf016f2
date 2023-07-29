@@ -10,8 +10,8 @@ com/example/springapp/service/CourseServiceImpl.class
 com/example/springapp/controller/UserinfoController.class
 com/example/springapp/repository/QuestionRepository.class
 com/example/springapp/model/Userinfo.class
-com/example/springapp/service/CompletedAssignmentService.class
 com/example/springapp/controller/AssignmentController.class
+com/example/springapp/service/CompletedAssignmentService.class
 com/example/springapp/repository/UserRepository.class
 com/example/springapp/repository/EnrollmentRepository.class
 com/example/springapp/service/LessonServiceImpl.class
@@ -22,15 +22,15 @@ com/example/springapp/controller/ReplyController.class
 com/example/springapp/model/Lesson.class
 com/example/springapp/service/AssignmentService.class
 com/example/springapp/controller/CourseController.class
-com/example/springapp/model/User.class
 com/example/springapp/model/Question.class
+com/example/springapp/model/User.class
 com/example/springapp/model/Reply.class
 com/example/springapp/repository/CompletedAssignmentRepository.class
 com/example/springapp/controller/PaymentController.class
 com/example/springapp/service/UserinfoService.class
 com/example/springapp/model/Enrollment.class
-com/example/springapp/security/ResourceNotFoundException.class
 com/example/springapp/controller/AssignmentQuestionController.class
+com/example/springapp/security/ResourceNotFoundException.class
 com/example/springapp/service/QuestionService.class
 com/example/springapp/repository/AssignmentRepository.class
 com/example/springapp/service/LessonService.class

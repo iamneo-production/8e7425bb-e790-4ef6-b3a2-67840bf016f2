@@ -19,7 +19,7 @@ import com.example.springapp.service.UserinfoService;
 @RestController
 @RequestMapping("/userinfo")
 //santhosh
-@CrossOrigin(origins = "https://8081-cbbdbceccaaadcdddffaedcbcabfdfafdade.project.examly.io")
+@CrossOrigin(origins = "https://8081-cbbdbceccaaadcdddffaeeaeaadbdbabf.project.examly.io")
 
 //ramesh
 //@CrossOrigin(origins = "https://8081-febcaabfefeacfadcdddffaedcbcabfdfafdade.project.examly.io")
