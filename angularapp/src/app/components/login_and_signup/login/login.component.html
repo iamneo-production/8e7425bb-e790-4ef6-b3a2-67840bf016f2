@@ -1,0 +1,37 @@
+<div class=" d-flex flex-column flex-xl-row align-items-center bg">
+
+
+    <div class="container d-flex flex-column flex-xl-row shadows bg-white">
+        
+        <div class="d-flex">
+            <img src="../../assets/leftside.jpg" class="img-fluid img-responsive col-md-10 mx-auto" alt="logo"> 
+        </div>
+    
+        <div class="container d-flex align-items-center flex-column me-5">
+            <div class="d-flex align-items-center justify-content-center">
+                <img src="../../assets/rightside.png" style="width: 260px;" class="img-fluid col-md-4 mb-3 mt-4" alt="logo">
+            </div>
+
+            <form [formGroup]="loginForm" (ngSubmit)="login()" class="w-100">
+            <h2 class="my-4 text-center">LOGIN</h2>
+            <label class="form-label align-self-start mt-2">Email ID</label>
+            <input class="form-control col-md-2" for="email" formControlName="email" id="email" name="email" type="email" placeholder="Enter Your EmailID">
+            <span class="float-end text-danger m-0" *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">*email is required</span>
+            <span class="float-end text-danger m-0" *ngIf="loginForm.controls['email'].hasError('pattern')">*email is invalid</span>
+            <br>
+            <label class="form-label align-self-start">Password</label>
+            <input class="form-control col-md-2" formControlName="password" id="password" name="password" [type]="type"  placeholder="Enter Your Password">
+            <span class="float-end text-danger m-0" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">*password is required</span>
+            <span class="float-end text-danger m-0" *ngIf="loginForm.controls['password'].hasError('minlength')">*Requires atleast 8 characters</span>
+            <div class="form-check pt-1 align-self-start">
+                <input class="form-check-input focused" type="checkbox" (click)="onpassclick()" id="check1" name="option1" value="something" unchecked>
+                <label class="form-check-label">Show Password</label>
+              </div>
+              <button [disabled]="loginForm.invalid" class="btn mt-4 mb-3 w-100">LOGIN</button>
+              <span class="float-start">Don't Have an Account? - <a routerLink="/signup" class="link-primary link">Signup</a></span>
+              <span class="float-end">Forgot Password? - <a routerLink="/forgotpass" class="link-primary link">Reset</a></span>
+        </form>
+        <br><br>
+        </div>
+    </div>
+    </div>

@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+
+<!-- display discussions -->
+<div class="container mt-3 p-3">
+  <div class="d-flex justify-content-between py-2 m-0">
+    <p class="fw-semibold fs-3 py-0 m-0"><span class="mx-2 px-1 style" (click)="onback()"><i class="bi bi-arrow-left-short"></i></span> Discussions Forum</p>
+    <button *ngIf="role==='student'" class="btn btn-sm buttondesign" type="button" data-bs-toggle="modal" data-bs-target="#addpost"> + Add Post</button>
+  </div>
+  <div *ngIf="questions.length===0" class="alert alert-info" role="alert">
+    <h4 style="color: black;">No Discussions Yet</h4>
+  </div>
+    <div class="card my-3" *ngFor="let question of questions">
+        <div class="card-body">
+          <h5 class="card-title">{{question.question}}</h5>
+          <p class="card-text">raised by {{question.userName}}</p>
+          <a class="btn btn-sm buttondesign" routerLink="/replies" (click)="onClick(question)">See Replies</a>
+        </div>
+      </div>
+</div>
+<!--display discussions ends-->
+
+
+<!--add discussion modal-->
+<div class="modal fade" id="addpost" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Post</h1>
+      </div>
+      <div class="modal-body">
+          <label for="question">Question:</label>
+          <br>
+          <textarea class="w-100" placeholder="Your question goes here..." [(ngModel)]="addQuestion"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn savebutton" (click)="onsave()" data-bs-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--add discussion modal ends-->

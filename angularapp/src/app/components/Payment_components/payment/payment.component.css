@@ -1,0 +1,95 @@
+header{
+    width:100vw;
+    min-height: 100vh;
+    background-color: white;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    background-color: aliceblue;
+    max-width: 800px;
+    min-height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1.5rem;
+}
+.left{
+    flex-basis: 50%;
+}
+.right{
+    flex-basis: 50%;
+}
+form{
+    padding: 1rem;
+    margin-bottom: 20px;
+}
+h3{
+    margin-top: 1rem;
+    color: #2c3e50;
+}
+
+form input[type="text"]{
+    
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    margin: 0.5rem 0;
+    outline: none;
+    background-color: aliceblue;
+    border: 1px solid black;
+}
+form input[type="email"]{
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    margin: 0.5rem 0;
+    outline: none;
+    background-color: aliceblue;
+    border: 1px solid black;
+}
+#zip{
+    display: flex;
+    margin-top: 0.5rem;
+}
+#zip select{
+    padding: 0.5rem 0.7rem;
+    margin-top: 0.5rem;
+}
+
+.exp{
+    background-color: aliceblue;
+    height: 50px;
+    border: 1px solid black;
+    border-right: none;
+}
+
+@media only screen and(max-width: 770px){
+    .container{
+        flex-direction: column;
+    }
+    body{
+        overflow-x: hidden;
+    }
+}
+input.ng-invald.ng-touched{
+    border-color: red;
+}
+small{
+    color: red;
+}
+
+.btn-primary{
+    background-color: #5e17eb;
+    color:#fff;
+    border:2px solid #fff;
+    font-weight: 600;
+  }
+  
+  .btn-primary:hover{
+    background-color: #fff;
+    color: #5e17eb;
+    border:2px solid #5e17eb;
+  }

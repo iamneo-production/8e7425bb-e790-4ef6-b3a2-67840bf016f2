@@ -1,0 +1,63 @@
+<app-navbar></app-navbar>
+<div class="container my-3">
+  <p class="fw-semibold fs-3 py-2 m-0">Take Assignment</p>
+  <div class="card p-3 my-2" style="background-color: aliceblue;">
+    <h5 class="card-title "><b>Assignment Title: </b>{{assignmentDetail.assignmentName}}</h5>
+    <p class="card-text"><b>No. Of Questions: </b>{{assignment.length}}</p>
+  </div>
+    <form (ngSubmit)="handleSubmit()" method="post" *ngIf="!isTestCompleted">
+      <div class="col-md-7" *ngFor="let question of assignment; let i = index">
+        <h5>{{ i + 1 }}. &nbsp; {{ question.question }}</h5>
+        <div
+          class="ms-4 p-1"
+          *ngFor="let option of question.options; let opt = index"
+        >
+          <input
+            type="radio"
+            id="{{ i }}"
+            name="{{ i }}"
+            value="{{option}}"
+            #val
+            (change)="optionChange(i, val.value)"
+            required
+          />
+          <label for="html"> &nbsp;{{ option }}</label
+            ><br />
+          </div>
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="selectedOptions.length!==assignment.length || hasEmptyFields()"
+      >
+        submit
+      </button>
+    </form>
+    <div
+      class="row mt-2 mt-lg-5 p-2"
+      style="background-color: rgba(255, 255, 255, 0.502)"
+      *ngIf="isTestCompleted"
+    >
+      <div class="col mt-5 d-flex justify-content-center ">
+          <div class="card border-success mb-3" style="max-width: 40rem;">
+              <div class="card-header">
+              <h3>Quiz was submitted successfully</h3>
+          </div>
+          <div class="m-2 progress">
+              <div class="progress-bar bg-success" role="progressbar" [ngStyle]="{'width':percentage+'%'}"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <div class="card-body text-success">
+            <h5 class="card-title">Congratulations, you have achieved a result of {{percentage}}%!</h5>
+            <p class="card-text">you have marked <b>{{score}}</b> questions correctly out of <b>{{selectedOptions.length}} ({{ score }}/{{selectedOptions.length }})</b> </p>
+            <div class="d-flex justify-content-center">
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+            <p>Please wait. You will be redirected automatically within few seconds...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

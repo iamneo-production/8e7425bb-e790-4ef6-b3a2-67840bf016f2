@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+
+<!-- display all assignments -->
+<div class="container my-3">
+    <div class="d-flex justify-content-between py-2 m-0">
+        <p class="fw-semibold fs-3 py-0 m-0"><span class="mx-2 px-1 style" (click)="onback()"><i class="bi bi-arrow-left-short"></i></span>Assignments</p>
+        <button class="btn btn-sm buttondesign" type="button" routerLink="/assignments"> + Add New Assignment</button>
+      </div>
+    <div class="card my-2" *ngFor="let assignment of assignments.reverse()">
+        <div class="card-header">
+            <h5>Assignment Name: {{assignment.assignmentName}}</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text"><b>Due Date: </b>{{assignment.dueDate | date:'dd/MM/yyyy'}}</p>
+        </div>
+        <div class="card-footer">
+            <button type="button" class="btn btn-primary" (click)="viewAssignment(assignment.id)">View Assignment</button>
+            <button type="button" class="btn btn-primary" (click)="viewAssignmentReport(assignment.id)">Assignment Report</button>
+        </div>
+    </div>
+
+    <div *ngIf="assignments.length == 0" class="alert alert-info" role="alert">
+        <h4 style="color: black;">No Assignments have been Posted...</h4>
+      </div>
+
+  </div>
+  <!-- display all assignments ends-->
+
+

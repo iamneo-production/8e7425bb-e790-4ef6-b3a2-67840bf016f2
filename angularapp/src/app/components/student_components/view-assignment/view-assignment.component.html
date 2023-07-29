@@ -1,0 +1,82 @@
+<app-navbar></app-navbar>
+
+
+<div class="container my-3">
+    <p class="fw-semibold fs-3 py-2 m-0"><span class="mx-2 px-1 style" (click)="onback()"><i class="bi bi-arrow-left-short"></i></span>Assignments</p>
+    <div id="carouselExampleIndicators" class="carousel slide mt-3">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="btn btn-secondary col-12 col-md-6 {{color1}}" (click)="onClick()">Assignments in due</button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="btn btn-secondary col-12 col-md-6 {{color2}}" (click)="onClick()">Completed</button>
+
+        <div class="carousel-inner mt-3">
+
+          <div class="carousel-item active">
+            <div class="card my-2" *ngFor="let assignment of assignments.reverse()">
+                <div class="card-header">
+                    <h5>Assignment Name: {{assignment.assignmentName}}</h5>
+                </div>
+                <div class="card-body" style="background-color: aliceblue;">
+                    <p class="card-text"><b>Due Date: </b>{{assignment.dueDate | date:'dd/MM/yyyy'}}</p>
+                </div>
+                <div class="card-footer" style="background-color: aliceblue;">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#instructionsModal" (click)="getAssignmentId(assignment.id)">Take Assignment</button>
+                </div>
+            </div>
+
+            <div *ngIf="assignments.length == 0" class="alert alert-info" role="alert">
+                <h4 style="color: black;">No Assignments have been Posted...</h4>
+              </div>
+
+          </div>
+
+          <div class="carousel-item">
+            <div class="card my-3" *ngFor="let completed of completedAssignments.reverse()">
+                <div class="card-header">
+                    <h5><b>Assignment Title: </b>{{completed.assignmentName}}</h5>
+                    
+                </div>
+                <div class="card-body" style="background-color: aliceblue;">
+                    <p class="card-text"><b>Marks Obtained: </b>{{completed.marksObtained}}%
+                      <span class="badge rounded-pill bg-success" *ngIf="completed.marksObtained>75">Very Good</span>
+                      <span class="badge rounded-pill bg-warning" *ngIf="completed.marksObtained<=75 && completed.marksObtained>=35">Good</span>
+                      <span class="badge rounded-pill bg-danger" *ngIf="completed.marksObtained<35">Poor</span>
+                    </p>
+                </div>
+            </div>
+            <div *ngIf="completedAssignments.length == 0" class="alert alert-info" role="alert">
+              <h4 style="color: black;">No Completed Assignments</h4>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+</div>
+
+
+
+  <!--Instructions Modal -->
+  <div class="modal fade" id="instructionsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Assignment Instructions</h1>
+        </div>
+        <div class="modal-body p-5">
+            <p align="justify">⚫The quizzes consists of questions carefully designed to help you self-assess your comprehension of the information presented on the topics covered in the module. No data will be collected on the website regarding your responses or how many times you take the quiz.</p>
+            <p align="justify">
+            ⚫Each question in the quiz is of multiple-choice or "true or false" format. Read each question carefully, and click on the button next to your response that is based on the information covered on the topic in the module. Each correct or incorrect response will result in appropriate feedback immediately at the bottom of the screen.<br>
+            </p>   <p align="justify">          
+            ⚫After responding to a question, click on the "Next Question" button at the bottom to go to the next questino. After responding to the 8th question, click on "Close" on the top of the window to exit the quiz.<br>
+            </p><p align="justify">              
+            ⚫ If you select an incorrect response for a question, you can try again until you get the correct response. If you retake the quiz, the questions and their respective responses will be randomized.<br>
+            </p><p align="justify">             
+            ⚫The total score for the quiz is based on your responses to all questions. If you respond incorrectly to a question or retake a question again and get the correct response, your quiz score will reflect it appropriately. However, your quiz will not be graded, if you skip a question or exit before responding to all the questions.    
+            </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Go Back</button>
+          <button type="button" class="btn btn-primary" (click)="gotoTestPage()" data-bs-dismiss="modal">Take Assignment</button>
+        </div>
+      </div>
+    </div>
+  </div>
