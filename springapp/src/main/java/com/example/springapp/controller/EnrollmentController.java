@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.springapp.model.Course;
 import com.example.springapp.model.Enrollment;
-import com.example.springapp.repository.EnrollmentRepository;
 import com.example.springapp.service.CourseService;
+import com.example.springapp.service.EnrollmentService;
 
 @RestController
 //santhosh
@@ -37,7 +37,7 @@ import com.example.springapp.service.CourseService;
 //@CrossOrigin(origins = "https://8081-fdfedfdaaaacfedbadcdddffaedcbcabfdfafdade.project.examly.io")
 
 //sumanth
-//@CrossOrigin(origins = "https://8081-daeacaadbcfaeadcdddffaedcbcabfdfafdade.project.examly.io")
+@CrossOrigin(origins = "https://8081-daeacaadbcfaeadcdddffaedcbcabfdfafdade.project.examly.io")
 
 //mrinal
 //@CrossOrigin(origins = "https://8081-fbbfbccabebadcdddffaedcbcabfdfafdade.project.examly.io")
@@ -51,68 +51,49 @@ import com.example.springapp.service.CourseService;
 @RequestMapping("/enrollment")
 public class EnrollmentController {
 	@Autowired
-	private EnrollmentRepository enrollmentRepository;
-	
-	@Autowired
-	private CourseService courseService;
+	private EnrollmentService enrollmentService;
 
 	//get all enrollments
 	@GetMapping
 	public ResponseEntity<List<Enrollment>> getAllEnrollments(){
-		List<Enrollment> enrollment= enrollmentRepository.findAll();
-		return new ResponseEntity<>(enrollment,HttpStatus.OK);
+		return enrollmentService.getAllEnrollments();
 	}
 	
 	@GetMapping("/{id}")
     public ResponseEntity<Enrollment> getEnrollmentbyId(@PathVariable("Id") Long id) {
-        Enrollment enrollment = enrollmentRepository.findById(id).get();
-        return new ResponseEntity<>(enrollment, HttpStatus.OK);
+        return enrollmentService.getEnrollmentbyId(id);
     }
 	
 	// create enrollment
 	@PostMapping
 	public ResponseEntity<Enrollment> createEnrollment(@RequestBody Enrollment enrollment) {
-		Enrollment newEnrollment = enrollmentRepository.save(enrollment);
-		return new ResponseEntity<>(newEnrollment,HttpStatus.CREATED);
+		return enrollmentService.createEnrollment(enrollment);
 	}
 
 
     @GetMapping("/getEnrolledCourses/{userId}")
     public ResponseEntity<List<Course>> getEnrolledCoursesbyUserId(@PathVariable("userId") Long userId){
-        List<Enrollment> enrollments = enrollmentRepository.findEnrollmentsByUserId(userId);
-		List<Course> courses = new ArrayList<>();
-		for(Enrollment enrollment:enrollments){
-			Course course = courseService.getCourseByCourseId(enrollment.getCourseId());
-			courses.add(course);
-		}
-		return new ResponseEntity<List<Course>>(courses,HttpStatus.OK);
+        return enrollmentService.getEnrolledCoursesbyUserId(userId);
     }
 
     @GetMapping("/getEnrollments/{userId}")
     public ResponseEntity<List<Enrollment>> getEnrollmentsbyUserId(@PathVariable("userId") Long userId){
-        List<Enrollment> enrollments = enrollmentRepository.findEnrollmentsByUserId(userId);
-		return new ResponseEntity<List<Enrollment>>(enrollments,HttpStatus.OK);
+        return enrollmentService.getEnrollmentsbyUserId(userId);
     }
 
 	@GetMapping("/getEnrollmentsByCourseId/{courseId}")
 	public ResponseEntity<List<Enrollment>> getEnrollmentsByCourseId(@PathVariable("courseId") Long courseId){
-		List<Enrollment> enrollments = enrollmentRepository.findEnrollmentsByCourseId(courseId);
-		return new ResponseEntity<List<Enrollment>>(enrollments, HttpStatus.OK);
+		return enrollmentService.getEnrollmentsByCourseId(courseId);
 	}
 
 	@DeleteMapping("/deleteById/{id}")
 	public ResponseEntity<?> deleteEnrollmentById(@PathVariable("id") Long id){
-		enrollmentRepository.deleteById(id);
-		return new ResponseEntity<>(HttpStatus.OK);
+		return enrollmentService.deleteEnrollmentById(id);
 	}
 
 	@DeleteMapping("/deleteAllByCourseId/{courseId}")
 	public ResponseEntity<?> deleteAllEnrollmentByCourseId(@PathVariable("courseId") Long courseId){
-		List<Enrollment> enrollments = enrollmentRepository.findEnrollmentsByCourseId(courseId);
-		for(int i=0;i<enrollments.size();i++){
-			enrollmentRepository.deleteById(enrollments.get(i).getId());
-		}
-		return new ResponseEntity<>(HttpStatus.OK);
+		return enrollmentService.deleteAllEnrollmentByCourseId(courseId);
 	}
 
 
