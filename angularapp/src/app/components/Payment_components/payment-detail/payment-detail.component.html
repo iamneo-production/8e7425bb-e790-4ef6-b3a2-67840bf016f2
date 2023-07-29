@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<!-- Payment Detail Card -->
+<div class="container my-3">
+    <p class="fw-semibold fs-3 py-2 m-0"><span class="mx-2 px-1 style" (click)="onback()"><i class="bi bi-arrow-left-short"></i></span>Payment Details</p>
+    <div class="card my-3 mx-auto w-50" >
+        <div class="row g-0">
+          <div class="col-md-4">
+            <div class="card text-center h-100" style="background-color: aliceblue;">
+                <div class="card-body">
+                    <h3><b>Price: </b>Rs:200/-</h3>
+                    <h3><b>Course ID:</b>{{courseId}}</h3> 
+                </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body mt-4 text-center">
+                <h4><b>Payment method:</b> Credit Card</h4>
+                <h4><b>Transaction ID:</b> {{ transactionId }}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<!-- Payment Detail Card ends-->
+

@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<div class="container my-3 p-3">
+    <p class="fw-semibold fs-3 py-2 m-0"><span class="mx-2 px-1 style" (click)="onback()"><i class="bi bi-arrow-left-short"></i></span>View Assignment</p>
+    <div class="card p-3" style="background-color: aliceblue;">
+        <h5 class="card-title ps-3"><b>Assignment Name: </b>{{assignment.assignmentName}}</h5>
+        <div class="card-body">
+            <p class="card-text"><b>Posted On: </b>{{assignment.postedDate | date:'dd/MM/yyyy'}}</p>
+            <p class="card-text"><b>Due On: </b>{{assignment.dueDate | date:'dd/MM/yyyy'}}</p>
+            <p class="card-text"><b>No of Questions: </b>{{questions.length}}</p>
+        </div>
+    </div>
+    <hr>
+    <h4 class="mt-2 fw-bold">Questions:</h4>
+    <div class="my-2" *ngFor="let question of questions let i = index">
+        <h5><b>{{i+1}}. {{question.question}}</b></h5>
+        <h5>Options</h5>
+        <ol type="a">
+            <li>{{question.options[0]}}</li>
+            <li>{{question.options[1]}}</li>
+            <li>{{question.options[2]}}</li>
+            <li>{{question.options[3]}}</li>
+        </ol>
+        <p><b>Correct Answer: </b>{{question.answer}}</p>
+        <hr>
+    </div>
+</div>

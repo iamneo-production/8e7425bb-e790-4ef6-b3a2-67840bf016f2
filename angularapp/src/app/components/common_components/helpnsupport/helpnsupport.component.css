@@ -1,0 +1,11 @@
+.btn{
+    border:none;
+}
+
+.btn:focus{
+    font-weight: bold;
+}
+
+.bi-star-fill{
+    color: #5e17eb;
+}

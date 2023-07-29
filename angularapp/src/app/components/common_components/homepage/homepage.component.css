@@ -1,0 +1,21 @@
+.background-image {
+    background-image: url("../../../../assets/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
+  .foot {
+    position: fixed;
+    bottom: 1px;
+    left: 50%;
+  }
+  .blockquote-footer {
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  
+  h3 {
+    color: black;
+  }
+  

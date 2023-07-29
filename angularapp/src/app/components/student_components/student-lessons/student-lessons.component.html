@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-3 p-3" id="main-container">
+  <p class="fw-semibold fs-3 py-2 m-0"><span class="mx-2 px-1 style" (click)="onback()"><i class="bi bi-arrow-left-short"></i></span>Lessons</p>
+  <div class="card w-100 mb-3 bg">
+    <div class="card-body">
+        <h3 class="card-title pb-4"><b>Course Name:</b> {{course.courseName}}</h3>
+        <h6 class="card-text pb-2"><b>Course Id:</b> {{course.courseId}}</h6>
+        <h6 class="card-text pb-2"><b>Course Description:</b> {{course.courseDescription}}</h6>
+        <h6 class="card-text pb-2"><b>No. of Lessons: </b> {{lessons.length}}</h6>
+        <button class="btn btn-primary me-1" routerLink="/viewAssignments">Assignments</button>
+        <button class="btn btn-primary" routerLink="/discussions">Discussions</button>
+    </div>
+</div>
+
+    <div class="row d-flex flex-column flex-md-row">
+      <div class="col-12 col-md-6 col-lg-3 my-2" *ngFor="let lesson of lessons">
+        <div class="card h-100" style="background-color: aliceblue;">
+          <img src="../../../../assets/lesson.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Lesson Name: {{lesson.lessonName}}</h5>
+            <p class="card-text">Description: {{lesson.lessonDescription}}</p>
+          </div>
+          <div class="card-footer" style="background-color: aliceblue;">
+            <a class ="btn btn-primary w-100" (click)="showlessondescription(lesson.lessonId)"> View Lesson </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div *ngIf="lessons.length == 0" class="alert alert-info" role="alert">
+      <h4 style="color: black;">NO LESSONS!</h4>
+      <p>No Lessons were found for this course.</p>
+    </div>
+
+  </div>

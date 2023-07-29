@@ -1,0 +1,185 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+
+    <!-- user-info grid -->
+    <div class="user-info card">
+        <div class="card-header w-100">
+            <h5 class="text-start ms-2 header">User Info<span class="float-end"><button class="btn btn-sm btn-primary"
+                        data-bs-toggle="modal" data-bs-target="#editprofilemodal">Edit Profile</button></span></h5>
+        </div>
+        <div class="card-body">
+            <div class="row d-flex flex-column flex-md-row">
+                <div class="col col-md-4 text-center">
+                    <div class="row">
+                        <div class="col-6 text-end">
+                            <h5 class="fw-semibold">UserName:</h5>
+                        </div>
+                        <div class="col-6 text-start">
+                            <h5 *ngIf="userinfo.username!=null && userinfo.username!=''">{{userinfo.username}}</h5>
+                            <h5 class="text-muted" *ngIf="userinfo.username===null || userinfo.username===''">Not Set
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-4 text-center">
+                    <div class="row">
+                        <div class="col-6 text-end">
+                            <h5 class="fw-semibold">Education:</h5>
+                        </div>
+                        <div class="col-6 text-start">
+                            <h5 *ngIf="userinfo.education!=null && userinfo.education!=''">{{userinfo.education}}</h5>
+                            <h5 class="text-muted" *ngIf="userinfo.education===null|| userinfo.education===''">Not Set
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-4 text-center">
+                    <div class="row">
+                        <div class="col-6 text-end">
+                            <h5 class="fw-semibold">Email:</h5>
+                        </div>
+                        <div class="col-6 text-start">
+                            <h5>{{userinfo.email}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex flex-column flex-md-row">
+                <div class="col col-md-4 text-center">
+                    <div class="row">
+                        <div class="col-6 text-end">
+                            <h5 class="fw-semibold">Organization:</h5>
+                        </div>
+                        <div class="col-6 text-start">
+                            <h5 *ngIf="userinfo.organization!=null && userinfo.organization!=''">
+                                {{userinfo.organization}}</h5>
+                            <h5 class="text-muted" *ngIf="userinfo.organization===null|| userinfo.organization===''">Not
+                                Set</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-4 text-center">
+                    <div class="row">
+                        <div class="col-6 text-end">
+                            <h5 class="fw-semibold">Role:</h5>
+                        </div>
+                        <div class="col-6 text-start">
+                            <h5>{{userinfo.occupation}}</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-4 text-center">
+                    <div class="row">
+                        <div class="col-6 text-end">
+                            <h5 class="fw-semibold">Domain:</h5>
+                        </div>
+                        <div class="col-6 text-start">
+                            <h5 *ngIf="userinfo.domain!=null && userinfo.domain!=''">{{userinfo.domain}}</h5>
+                            <h5 class="text-muted" *ngIf="userinfo.domain===null || userinfo.domain===''">Not Set</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- user-info grid ends-->
+
+    <!-- courses grid -->
+    <div class="course card">
+        <h5 class="card-header h-25 d-flex align-items-center justify-content-center">No. of enrolled
+            courses</h5>
+        <div class="card-body text-center">
+            <div class=" d-flex align-items-center justify-content-center h-75">
+                <h1 class="big-font">{{ enrolledCourses.length < 10 ? '0' + enrolledCourses.length :
+                        enrolledCourses.length }}</h1>
+            </div>
+        </div>
+    </div>
+    <!-- courses grid ends -->
+
+    <!-- assignment grid -->
+    <div class="assignment card">
+        <h5 class="card-header h-25 d-flex align-items-center justify-content-center">Assignment
+            Progress</h5>
+        <div class="card-body h-75 p-0 d-flex align-items-center justify-content-center">
+            <div class="chartholder">
+                <canvas id="donut"></canvas>
+            </div>
+        </div>
+    </div>
+    <!-- assignment grid ends-->
+
+    <!-- time-spent grid -->
+    <div class="timespent card ">
+        <h5 class="card-header h-25 d-flex align-items-center justify-content-center">Total Time
+            Spent(in Hrs)</h5>
+        <div class="card-body text-center">
+            <div class=" d-flex align-items-center justify-content-center h-75">
+                <h1 class="big-font">{{userinfo.totaltime}}</h1>
+            </div>
+        </div>
+    </div>
+    <!-- time-spent grid ends-->
+
+    <!-- enrolled courses grid -->
+    <div class="enrolled card">
+        <div class="card-header w-100 ">
+            <h5 class="text-start ms-2 header">Enrolled Courses
+                <span class="float-end">
+                    <button class="btn btn-sm btn-primary" routerLink="/studentCourses">View All</button></span>
+            </h5>
+        </div>
+        <div class="row h-75 my-3">
+            <div class="col-12 col-md-3 my-3" *ngFor="let course of lastFourCourses">
+                <div class="card h-100">
+                    <img class="card-img-top" src="../../../../../assets/courses.png">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>Course Name:</b> {{course.courseName}}</h5>
+                        <p class="card-title"><b>Course Id:</b> {{course.courseId}}</p>
+                        <p class="card-title"><b>Instructor Id:</b> {{course.instructorId}}</p>
+                        <p class="card-title"><b>Course Description:</b> {{course.courseDescription}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="enrolledCourses.length == 0" class="alert alert-info" role="alert">
+            <h4 style="color: black;">No Enrolled Courses...</h4>
+            <p>Enroll Courses by clicking on view all and Start your learning Career</p>
+        </div>
+    </div>
+    <!-- enrolled courses grid ends-->
+</div>
+
+<!-- edit profile modal -->
+<div class="modal fade" id="editprofilemodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Profile</h1>
+            </div>
+            <div class="modal-body">
+                <label>Email</label>
+                <input class="form-control" type="" [value]="userinfo.email" disabled>
+                <label>Occupation</label>
+                <input class="form-control" type="" [value]="userinfo.occupation" disabled>
+                <label>UserName</label>
+                <input class="form-control" type="" #userName [value]="userinfo.username">
+                <label>Education</label>
+                <input class="form-control" type="" #education [value]="userinfo.education">
+                <label>Organization</label>
+                <input class="form-control" type="" #organization [value]="userinfo.organization">
+                <label>Domain</label>
+                <input class="form-control" type="" #domain [value]="userinfo.domain">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-md btn-primary" data-bs-dismiss="modal"
+                    (click)="updateinfo(userName.value,education.value,organization.value,domain.value)">Update
+                    Profile</button>
+                <button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- edit profile modal ends-->

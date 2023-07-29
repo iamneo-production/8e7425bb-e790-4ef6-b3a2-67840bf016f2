@@ -1,0 +1,40 @@
+.btn-primary{
+    background-color: #5e17eb;
+    color:#fff;
+    border:2px solid #fff;
+    font-weight: 600;
+  }
+  
+  .btn-primary:hover{
+    background-color: #fff;
+    color: #5e17eb;
+    border:2px solid #5e17eb;
+  }
+  
+  .btn-secondary{
+    background-color: #7e7e7e;
+    color:#fff;
+    border:2px solid #fff;
+    font-weight: 600;
+  }
+  
+  .btn-secondary:hover{
+    background-color: #fff;
+    color: #7e7e7e;
+    border:2px solid #7e7e7e;
+  }
+
+  .style:hover{
+    color: white;
+    background-color: #5e17eb;
+    border-radius:50%;
+  }
+
+  .form-control{
+    border: 2px solid #b5b5b5;
+  }
+  
+  .form-control:focus{
+    box-shadow: none;
+    border:2px solid #5e17eb;
+  }
