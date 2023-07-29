@@ -1,6 +1,8 @@
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/security/ResourceNotFoundException.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/UserService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/SpringappApplication.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Enrollment.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/UserinfoService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/AssignmentQuestionService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Assignment.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/LessonServiceImpl.java
@@ -8,6 +10,7 @@
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/EnrollmentController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/EnrollmentRepository.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/LessonRepository.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/QuestionService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/CourseService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/ReplyRepository.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/UserController.java
@@ -21,10 +24,15 @@
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/UserinfoController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/UserRepository.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Course.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/ReplyService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/AssignmentQuestionRepository.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/ReplyController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Payment.java
+<<<<<<< HEAD
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/UserinfoRepository.java
+=======
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/EnrollmentService.java
+>>>>>>> 98dd61c60c010f5aa1e0c8f6bd7878c41043169a
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/LessonService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/QuestionRepository.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Userinfo.java

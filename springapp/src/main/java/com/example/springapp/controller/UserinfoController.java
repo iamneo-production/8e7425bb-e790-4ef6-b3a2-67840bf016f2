@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.springapp.model.Userinfo;
-import com.example.springapp.repository.UserinfoRepository;
+import com.example.springapp.service.UserinfoService;
 
 
 @RestController
@@ -47,28 +47,26 @@ import com.example.springapp.repository.UserinfoRepository;
 
 public class UserinfoController {
     @Autowired
-    public UserinfoRepository userinfoRepository;
+    public UserinfoService userinfoService;
 
     @PostMapping("/add")
     public ResponseEntity<Userinfo> adduserinfo(@RequestBody Userinfo receiveddata){
-        Userinfo userinfo=userinfoRepository.save(receiveddata);
+        Userinfo userinfo=userinfoService.addUserinfo(receiveddata);
         return new ResponseEntity<>(userinfo,HttpStatus.OK);  
     }
 
 
     @GetMapping("/get/{id}")
     public ResponseEntity<Userinfo> getuserbyid(@PathVariable("id") String email){
-        Userinfo user=userinfoRepository.findById(email).get();
-        return new ResponseEntity<>(user,HttpStatus.OK);
-        
+        Userinfo user=userinfoService.getById(email);
+        return new ResponseEntity<>(user,HttpStatus.OK);  
     }
     
     @PutMapping("/update")
     public ResponseEntity<Userinfo> updateuserbyid(@RequestBody Userinfo receiveddata){
-        Userinfo user=userinfoRepository.findById(receiveddata.getEmail()).get();
+        Userinfo user=userinfoService.getById(receiveddata.getEmail());
         user=receiveddata;
-        userinfoRepository.save(user);
+        userinfoService.addUserinfo(user);
         return new ResponseEntity<>(user,HttpStatus.OK);
-        
     }
 }
