@@ -4,6 +4,8 @@ package com.example.springapp.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.springapp.model.Question;
-import com.example.springapp.repository.QuestionRepository;
+import com.example.springapp.service.QuestionService;
 
 @RestController
 @RequestMapping("/questions")
@@ -46,20 +48,40 @@ import com.example.springapp.repository.QuestionRepository;
 
 public class QuestionController {
     @Autowired
-    public QuestionRepository questionRepository;
+    public QuestionService questionService;
+
     @PostMapping("/addquestion")
-    public List<Question> addQuestion(@RequestBody Question receivedQuestion){
-        questionRepository.save(receivedQuestion);
-        return questionRepository.findQuestionsbyCourseId(receivedQuestion.getCourseId());
+    public ResponseEntity<List<Question>> addQuestion(@RequestBody Question receivedQuestion){
+    try {
+        questionService.addQuestion(receivedQuestion);
+        List<Question> questions =  questionService.getAllByCourseId(receivedQuestion.getCourseId());
+            return new ResponseEntity<List<Question>>(questions, HttpStatus.OK);
+        }
+        catch (Exception e) {
+            throw new RuntimeException("Error is posting question", e);
+        }
     }
 
     @GetMapping("/getquestion/{id}")
-    public Question getQuestion(@PathVariable("id") Long id){
-        return questionRepository.findById(id).get();
+    public ResponseEntity<Question> getQuestion(@PathVariable("id") Long id){
+        try {
+        Question questions =  questionService.getById(id);
+        return new ResponseEntity<Question>(questions, HttpStatus.OK);
+        }
+        catch (Exception e) {
+            throw new RuntimeException("No such question with this ID", e);
+        }  
     }
 
-     @GetMapping("/allquestions/{courseId}")
-    public List<Question> getAllbyId(@PathVariable("courseId") Long courseId){
-        return questionRepository.findQuestionsbyCourseId(courseId);
+
+    @GetMapping("/allquestions/{courseId}")
+    public ResponseEntity<List<Question>> getAllbyId(@PathVariable("courseId") Long courseId){
+        try {
+            List<Question> questions =  questionService.getAllByCourseId(courseId);
+            return new ResponseEntity<List<Question>>(questions, HttpStatus.OK);
+        }
+        catch (Exception e) {
+            throw new RuntimeException("No such questions with this course ID", e);
+        }  
     }
 }
