@@ -54,6 +54,9 @@ public class AssignmentController {
     @PostMapping("/addAssignment")
     public ResponseEntity<Assignment> createAssignment(@RequestBody Assignment assignment){
         Assignment createdAssignment =  assignmentService.createAssignment(assignment);
+        if(createdAssinment == null){
+            return new ResponseEntity.status("", HttpStatus.Not_Found);
+        }
         return new ResponseEntity<Assignment>(createdAssignment, HttpStatus.OK);
     }
 
