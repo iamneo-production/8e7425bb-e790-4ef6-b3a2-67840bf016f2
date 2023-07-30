@@ -3,11 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-<<<<<<< HEAD
-    "start": "ng serve",
-=======
     "start": "ng serve --port 8081 --disable-host-check --host=0.0.0.0",
->>>>>>> 58bbab1ba70e21deeb26b6b2720f8fb98ac559e0
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -22,7 +18,7 @@
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
-    "chart.js": "^4.3.1",
+    "chart.js": "^4.3.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
