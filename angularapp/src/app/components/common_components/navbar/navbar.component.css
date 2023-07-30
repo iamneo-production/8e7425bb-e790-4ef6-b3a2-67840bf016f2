@@ -1,0 +1,49 @@
+.dropdown-menu {
+    min-width: 100px !important;
+  }
+
+  .button1:hover{
+    color:#5e17eb;
+  }
+
+  .anim{
+    position: relative;
+  }
+
+  .anim::after{
+    content: '';
+    width:0%;
+    height:2px;
+    background:#5e17eb;
+    position: absolute;
+    left:0%;
+    bottom:0;
+    transition: 0.5s;
+  }
+
+  .anim:hover::after,
+  .anim.active::after{
+    width:100%;
+  }
+
+  .anim.active{
+    font-weight: 600;
+  }
+
+ .form-control:focus{
+    box-shadow: none;
+    border:2px solid #5e17eb ;
+ }
+
+  .dropdown-item:hover{
+    background-color: azure;
+    color: #5e17eb;
+    border-radius: 5px;
+  }
+
+  .navbar-toggler{
+    color:black;
+    font-size: 20px;
+    box-shadow: none;
+    border:none;
+  }

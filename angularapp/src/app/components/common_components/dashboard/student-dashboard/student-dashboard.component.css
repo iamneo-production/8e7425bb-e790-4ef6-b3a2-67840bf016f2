@@ -1,0 +1,128 @@
+.container{
+    margin-top:5vh;
+    margin-bottom:5vh;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+    "u u u u"
+    "c t a a"
+    "e e e e";
+    gap:20px;
+}
+.card{
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+.course{
+    grid-area: c;
+    
+}
+
+.user-info{
+    grid-area: u;
+    
+}
+
+.assignment{
+    grid-area: a;
+}
+
+.timespent{
+    grid-area: t;
+}
+
+.enrolled{
+    grid-area: e;
+    border:none;
+    box-shadow: none;
+}
+
+.big-font{
+    font-size: 600%;
+  }
+  .card-header{
+    border:none;
+    color: #5e17eb;
+    font-weight: 600;
+    background-color: white;
+  }
+  .header{
+    color: #5e17eb;
+    font-weight: 600;
+  }
+.btn-primary{
+    background-color: #5e17eb;
+    color:#fff;
+    border:2px solid #fff;
+    font-weight: 600;
+}
+
+.btn-primary:hover{
+    background-color: #fff;
+    color: #5e17eb;
+}
+.mx-10{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.chartholder{
+    width:80%;
+    height:90%;
+}
+@media only screen and (max-width: 992px) {
+    .container{
+        margin-top:5vh;
+        margin-bottom:5vh;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+        "u u u u"
+        "c c t t"
+        "a a a a"
+        "e e e e";
+        gap:20px;
+    }
+    .big-font{
+        font-size: 250%;
+    }
+    .chartholder{
+        width:100%;
+        height:100%;
+    }
+  }
+
+  @media only screen and (max-width: 569px) {
+    .container{
+        margin-top:5vh;
+        margin-bottom:5vh;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: auto 30vh 25vh 25vh;
+        grid-template-areas:
+        "u u u u"
+        "a a a a"
+        "c c c c"
+        "t t t t"
+        "e e e e";
+        gap:20px;
+    }
+    .big-font{
+        font-size: 250%;
+    }
+    .chartholder{
+        width:100%;
+        height:100%;
+    }
+  }
+
+  .form-control{
+    border: 2px solid #b5b5b5;
+}
+
+.form-control:focus{
+    box-shadow: none;
+    border:2px solid #5e17eb;
+}
+

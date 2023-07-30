@@ -19,6 +19,33 @@ import com.example.springapp.model.Course;
 import com.example.springapp.service.CourseService;
 
 @RestController
+//santhosh
+@CrossOrigin(origins = "https://8081-cbbdbceccaaadcdddffaedcbcabfdfafdade.project.examly.io")
+
+//ramesh
+//@CrossOrigin(origins = "https://8081-febcaabfefeacfadcdddffaedcbcabfdfafdade.project.examly.io")
+
+//rithick
+//@CrossOrigin(origins = "https://8081-ccfbbdadfbadcdddffaedcbcabfdfafdade.project.examly.io")
+
+//oviya
+//@CrossOrigin(origins = "https://8081-bfbbbeacbadcdddffaedcbcabfdfafdade.project.examly.io")
+
+//joshika
+//@CrossOrigin(origins = "https://8081-fdfedfdaaaacfedbadcdddffaedcbcabfdfafdade.project.examly.io")
+
+//sumanth
+//@CrossOrigin(origins = "https://8081-daeacaadbcfaeadcdddffaedcbcabfdfafdade.project.examly.io")
+
+//mrinal
+//@CrossOrigin(origins = "https://8081-fbbfbccabebadcdddffaedcbcabfdfafdade.project.examly.io")
+
+//muskan
+//@CrossOrigin(origins = "https://8081-ddefcefdabfbdadcdddffaeeaeaadbdbabf.project.examly.io")
+
+//rishik
+//@CrossOrigin(origins = "https://8081-caccdedfdbdccefeadcdddffaedcbcabfdfafdade.project.examly.io")
+
 @RequestMapping("/course")
 public class CourseController {
 
@@ -30,7 +57,6 @@ public class CourseController {
     }
     // To get all the courses
     @GetMapping
-    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<List<Course>> getAllCourses() {
         List<Course> course = courseService.findAllCourses();
         return new ResponseEntity<>(course, HttpStatus.OK);
@@ -38,7 +64,6 @@ public class CourseController {
 
     // To add a new course
     @PostMapping
-    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Course> addCourse(@RequestBody Course course) {
         Course newCourse = courseService.addCourse(course);
         return new ResponseEntity<>(newCourse, HttpStatus.CREATED);
@@ -46,7 +71,6 @@ public class CourseController {
 
     // To update a course
     @PutMapping("/update")
-    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Course> updateCourses(@RequestBody Course course) {
         Course updatedCourse = courseService.updateCourses(course);
         return new ResponseEntity<>(updatedCourse, HttpStatus.OK);
@@ -54,7 +78,6 @@ public class CourseController {
 
     // To delete the course based on courseid
     @DeleteMapping("/delete/{courseId}")
-    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<?> deleteCourses(@PathVariable("courseId") Long courseId) {
         courseService.deleteCourses(courseId);
         return new ResponseEntity<>(HttpStatus.OK);
@@ -62,10 +85,15 @@ public class CourseController {
 
     // To get the course based on courseid
     @GetMapping("/{courseId}")
-    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Course> getCourseByCourseId(@PathVariable("courseId") Long courseId) {
         Course course = courseService.getCourseByCourseId(courseId);
         return new ResponseEntity<>(course, HttpStatus.OK);
     }
 
+    //To get courses based on instructor id
+    @GetMapping("/instructor/{instructorId}")
+    public ResponseEntity<List<Course>> getCourseByInstructorId(@PathVariable("instructorId") Long instructorId) {
+        List<Course> course = courseService.getCoursesByInstructorId(instructorId);
+        return new ResponseEntity<>(course, HttpStatus.OK);
+    }
 }

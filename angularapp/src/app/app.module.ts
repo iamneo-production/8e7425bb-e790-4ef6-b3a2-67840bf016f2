@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/common_components/navbar/navbar.component';
@@ -31,6 +31,7 @@ import { StudentCoursesComponent } from './components/student_components/student
 import { StudentLessonsComponent } from './components/student_components/student-lessons/student-lessons.component';
 import { TakeAssignmentComponent } from './components/student_components/take-assignment/take-assignment.component';
 import { ViewAssignmentComponent } from './components/student_components/view-assignment/view-assignment.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -64,9 +65,13 @@ import { ViewAssignmentComponent } from './components/student_components/view-as
     TakeAssignmentComponent,
     ViewAssignmentComponent
   ],
+
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
