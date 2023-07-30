@@ -20,7 +20,7 @@ import com.example.springapp.service.ReplyService;
 @RestController
 @RequestMapping("/reply")
 //santhosh
-@CrossOrigin(origins = "https://8081-cbbdbceccaaadcdddffaedcbcabfdfafdade.project.examly.io")
+// @CrossOrigin(origins = "https://8081-cbbdbceccaaadcdddffaedcbcabfdfafdade.project.examly.io")
 
 //ramesh
 //@CrossOrigin(origins = "https://8081-febcaabfefeacfadcdddffaedcbcabfdfafdade.project.examly.io")
@@ -38,7 +38,7 @@ import com.example.springapp.service.ReplyService;
 //@CrossOrigin(origins = "https://8081-daeacaadbcfaeadcdddffaedcbcabfdfafdade.project.examly.io")
 
 //mrinal
-//@CrossOrigin(origins = "https://8081-fbbfbccabebadcdddffaedcbcabfdfafdade.project.examly.io")
+@CrossOrigin(origins = "https://8081-fbbfbccabebadcdddffaeeaeaadbdbabf.project.examly.io")
 
 //muskan
 //@CrossOrigin(origins = "https://8081-ddefcefdabfbdadcdddffaeeaeaadbdbabf.project.examly.io")
