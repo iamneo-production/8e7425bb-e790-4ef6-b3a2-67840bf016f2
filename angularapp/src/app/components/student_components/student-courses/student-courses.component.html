@@ -1,0 +1,90 @@
+<app-navbar></app-navbar>
+  <div class="container mt-3 p-3" id="main-container">
+
+    <p class="fw-semibold fs-3 py-2 m-0"><span class="mx-2 px-1 style" (click)="onback()"><i class="bi bi-arrow-left-short"></i></span>Courses</p>
+    
+    <div class="container w-100">
+      <input class="form-control mx-auto" type="text" [(ngModel)]="searchText" (ngModelChange)="onSearch()" placeholder="Search...">
+    </div>
+
+<!-- Enrolled Courses -->
+<p class="fw-semibold fs-3 py-2 m-0 my-3">Enrolled Courses</p>
+
+<div class="row d-flex flex-column flex-md-row">
+    <div class="col-12 col-md-6 col-lg-3 my-2" *ngFor="let course of filteredEnrolledCourses.reverse()">
+      <div class="card h-100">
+        <img class="card-img-top" src="../../../../../assets/courses.png">
+      <div class="card-body">
+        <h5 class="card-title"><b>Course Name:</b> {{course.courseName}}</h5>
+        <p class="card-title"><b>Course Id:</b> {{course.courseId}}</p>
+        <p class="card-title"><b>Instructor Id:</b> {{course.instructorId}}</p>
+        <p class="card-title"><b>Course Description:</b> {{course.courseDescription}}</p>
+      </div>
+      <div class="card-footer">
+        <a class="btn btn-primary w-100" routerLink="/lessons" (click)="saveCourseId(course.courseId)">View Course</a>
+        <a type="button" class="btn btn-secondary w-100" data-bs-toggle="modal" data-bs-target="#unenrollModal" (click)="getunenrollId(course.courseId)">Unenroll Course</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="filteredEnrolledCourses.length == 0 && enrolledCourses.length != 0" class="alert alert-info" role="alert">
+  <h4 style="color: black;">No matching results</h4>
+</div>
+
+<div *ngIf="enrolledCourses.length == 0" class="alert alert-info" role="alert">
+  <h4 style="color: black;">No Courses were found...</h4>
+</div>
+<!-- Enrolled Courses Ends-->
+
+
+    <!-- Courses -->
+    <p class="fw-semibold fs-3 py-2 m-0">All Courses</p>
+
+    <div class="row d-flex flex-column flex-md-row">
+        <div class="col-12 col-md-6 col-lg-3 my-2" *ngFor="let course of filteredCourses.reverse()">
+          <div class="card h-100">
+            <img class="card-img-top" src="../../../../../assets/courses.png">
+          <div class="card-body">
+            <h5 class="card-title"><b>Course Name:</b> {{course.courseName}}</h5>
+            <p class="card-title"><b>Course Id:</b> {{course.courseId}}</p>
+            <p class="card-title"><b>Instructor Id:</b> {{course.instructorId}}</p>
+            <p class="card-title"><b>Course Description:</b> {{course.courseDescription}}</p>
+          </div>
+          <div class="card-footer">
+            <button  *ngIf="!isEnrolled(course)"class ="btn btn-primary w-100" (click)="goToSummary(course.courseId)">Enroll Courses</button>
+           <button *ngIf="isEnrolled(course)" class ="btn btn-secondary w-100" disabled>Enrolled</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="filteredCourses.length == 0 && courses.length != 0" class="alert alert-info" role="alert">
+      <h4 style="color: black;">No matching results</h4>
+    </div>
+
+    <div *ngIf="courses.length == 0" class="alert alert-info" role="alert">
+      <h4 style="color: black;">No Courses were found...</h4>
+    </div>
+    <!-- Courses end -->
+  </div>
+
+
+ 
+  <!-- Un enroll courses Modal -->
+  <div class="modal fade" id="unenrollModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Modal title</h1>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure to unenroll this course.</p>
+          <p class="text-danger">The amount paid will not be refunded!!!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="unEnroll()">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Un enroll courses Modal ends-->

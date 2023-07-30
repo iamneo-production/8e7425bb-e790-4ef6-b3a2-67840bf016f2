@@ -1,0 +1,76 @@
+<header>
+    <div class="container">
+        
+        <!-- billing section -->
+        <div class="left">
+            <h3>BILLING</h3>
+            <br>
+            <form action="">
+                First Name
+                <input type="text" name="firstname" placeholder="Enter as per card" required>
+                <br>
+                Last Name
+                <input type="text" name="lastname" placeholder="Enter as per card"required>
+                <br>
+                Email
+                <input type="email" name="email" placeholder="Enter email" required email>
+                <br>
+                
+            </form>
+            <h3>Total Amount : Rs {{pay.amount}}</h3>
+            <br>
+            <button class="btn btn-primary w-100 mt-4" type="submit" name="" value="Cancel Payment" (click)="onback()">Cancel Payment</button>
+        </div>
+        <!-- billing section ends -->
+
+        <div class="p-3"></div>
+
+        <!-- payment section -->
+        <div class="right">
+            <h3>PAYMENT</h3>
+            <form (ngSubmit)="GoToPaymentProcessing()" #myForm="ngForm">
+                Accepted Card<br>
+                <img src="../../../../assets/visa.png" width="50">
+                <img src="../../../../assets/masterCard.png" width="50">
+                <br><br>
+
+                Enter Card Number
+                <input type="text" name="credit_card_number" placeholder="Enter card number" ngModel required #ccnum="ngModel">
+                <div>
+                    <small *ngIf="ccnum.invalid && ccnum.touched">*card number is required</small>
+                </div>
+
+                Exp month
+                <input type="text" name="exp_month" placeholder="Enter Month" ngModel required #expm="ngModel">
+                <div>
+                    <small *ngIf="expm.invalid && expm.touched">*expiry month is required</small>
+                </div>
+                <div id="zip">
+                    <label>
+                        Exp year
+                        <select class="exp" name="exp_year" ngModel required #expy="ngModel">
+                            <option>Choose Year..</option>
+                            <option>2023</option>
+                            <option>2024</option>
+                            <option>2025</option>
+                            <option>2026</option>
+                        </select>
+                        <div>
+                            <small *ngIf="expy.invalid && expy.touched">*expiry year is required</small>
+                        </div>
+                    </label>
+                    <label>
+                        CVV 
+                        <input type="text" class="exp" name="cvv" placeholder="Enter CVV" ngModel required #cvvv="ngModel">
+                        <div>
+                            <small *ngIf="cvvv.invalid && cvvv.touched">*expiry year is required</small>
+                        </div>
+                    </label>
+                </div>
+            </form>
+            <button class="btn btn-primary w-100 mt-1 mb-3" type="submit" name="" value="PAY" (click)="OnSubmit()" [disabled]="!myForm.valid">PAY</button>
+        </div>
+        <!-- payment section ends-->
+
+    </div>
+</header>

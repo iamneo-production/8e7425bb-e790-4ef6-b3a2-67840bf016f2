@@ -38,7 +38,10 @@ public class LessonServiceImpl implements LessonService{
         return lessonRepository.getLessonByCourseId(courseId);
     }
 
-       
+    public Lesson getLessonById(Long lessonId){
+        return lessonRepository.findById(lessonId).get();
+    }
+    
 }
 
 

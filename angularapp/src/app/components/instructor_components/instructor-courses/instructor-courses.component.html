@@ -1,0 +1,124 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-3 p-3" id="main-container">
+
+  <p class="fw-semibold fs-3 py-2 m-0"><span class="mx-2 px-1 style" (click)="onback()"><i class="bi bi-arrow-left-short"></i></span>Manage Courses</p>
+  <button type="button" class="btn btn-primary my-3" (click)="openAddModal(null,'add')">+Add New Course</button>
+  
+  <!-- display Courses -->
+  <div class="row d-flex flex-column flex-md-row">
+      <div class="col-12 col-md-6 col-lg-3 my-2" *ngFor="let course of course.reverse()">
+        <div class="card h-100">
+          <img class="card-img-top" src="../../../../../assets/courses.png">
+        <div class="card-body">
+          <h5 class="card-title"><b>Course Name:</b> {{course.courseName}}</h5>
+          <p class="card-title"><b>Course Id:</b> {{course.courseId}}</p>
+          <p class="card-title"><b>Instructor Id:</b> {{course.instructorId}}</p>
+          <p class="card-title"><b>Course Description:</b> {{course.courseDescription}}</p>
+        </div>
+        <div class="card-footer">
+          <a class ="btn btn-secondary w-100" (click)="openEditModal(course,'edit')"> Edit Course Details</a>
+          <a class ="btn btn-primary w-100" (click)="showlessons(course.courseId)">Manage Lessons</a>
+          <a class ="btn btn-danger w-100" (click)="openDeleteModal(course,'delete')"> Delete Course</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="course.length == 0" class="alert alert-info" role="alert">
+    <h4 style="color: black;">No Courses were found...</h4>
+    <p>Start Adding Courses by clicking on add Course button</p>
+  </div>
+  <!-- display Courses ends-->
+</div>
+
+<!-- Add Course Modal -->
+<div class="modal" id="onAddCourses">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"> Add New Course </h5>
+      </div>
+      <div class="modal-body">
+        <form #addForm="ngForm"(ngSubmit)="onAddCourses(addForm)">
+          <div class="form-group">
+            <label for="courseName">Course Name</label>
+            <input type="text" ngModel name="courseName"class="form-control" id="courseName" placeholder="Enter Course Name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="instructorId">Instructor Id</label>
+            <input type="text" value="{{instructorId}}" name="instructorId"class="form-control" id="instructorId" placeholder="Enter Instructor Id" disabled>
+          </div>
+          <div class="form-group">
+            <label for="courseDescription">Course Description</label>
+            <textarea style="height: 100px;" type="text" ngModel name="courseDescription"class="form-control" id="courseDescription" placeholder="Enter Course Description" required></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="closeAddModal()" data-dismiss="modal">Close</button>
+            <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" (click)="closeAddModal()">Save changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Add Course Modal Ends-->
+
+<!-- Edit Course Modal -->
+<div class="modal" id="onEditCourses">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"> Edit Course {{editCourses.courseName}}</h5>
+      </div>
+      <div class="modal-body">
+        <form #editForm="ngForm">
+          <div class="form-group">
+            <label for="courseName">Course Name </label>
+            <input type="text" ngModel="{{editCourses.courseName}}" name="courseName"class="form-control" id="courseName" placeholder="Enter Course Name" required>
+          </div>
+          <input type="hidden" ngModel="{{editCourses.courseId}}" name="courseId" class="form-control" id="courseId" placeholder="Enter Course Id">
+          <input type="hidden" ngModel="{{editCourses.instructorId}}" name="instructorId"class="form-control" id="instructorId" placeholder="Enter Instructor Id">
+
+          <div class="form-group">
+            <label for="courseDescription">Course Description</label>
+            <textarea style="height: 100px;" type="text" ngModel="{{editCourses.courseDescription}}" name="courseDescription"class="form-control" id="courseDescription" placeholder="Enter Course Description" required></textarea>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="closeEditModal()" data-dismiss="modal">Close</button>
+            <button [disabled]="editForm.invalid" type="submit"(click)="onUpdateCourses(editForm.value)" class="btn btn-primary"(click)="closeEditModal()">Save changes</button>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Edit Course Modal Ends-->
+
+<!-- Delete Course Modal -->
+<div class="modal" id="onDeleteCourses">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"> Delete Course </h5>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure want to delete Course {{deleteCourses.courseName}}?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeDeleteModal()" data-dismiss="modal">No</button>
+        <button type="button" class="btn btn-primary"(click)="closeDeleteModal()" (click)="onDeleteCourses(deleteCourses.courseId)" >Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Delete Course Modal Ends-->
+
+
+
+
+
+

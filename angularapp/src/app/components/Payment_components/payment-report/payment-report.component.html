@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+
+<!-- Payment Report Table -->
+<div class="container my-3">
+    <p class="fw-semibold fs-3 py-2 m-0"><span class="mx-2 px-1 style" (click)="onback()"><i class="bi bi-arrow-left-short"></i></span>Payment Report</p>
+    <table class="table">
+        <thead class="text-center">
+          <tr>
+            <th scope="col">Course Id</th>
+            <th scope="col">Course Price</th>
+            <th scope="col">Processed Date</th>
+            <th scope="col">Show Details</th>
+          </tr>
+        </thead>
+        <tbody class="text-center table-group-divider">
+          <tr *ngFor="let payment of payments.reverse()">
+            <td>{{payment.courseId}}</td>
+            <td>Rs. 200/-</td>
+            <td>{{payment.date | date:'dd/MM/yyyy'}}</td>
+            <td><a type="button" class="btn btn-primary btn-sm" [routerLink]="['/paymentDetails',payment.courseId,payment.id]">Show Details</a></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<!-- Payment Report Table Ends-->

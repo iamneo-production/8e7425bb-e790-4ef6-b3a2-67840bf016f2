@@ -5,7 +5,6 @@ main/java/com/example/springapp/controller/PaymentController.class
 com/example/springapp/model/Lesson.class
 main/java/com/example/springapp/service/PaymentService.class
 com/example/springapp/repository/CourseRepository.class
-com/example/springapp/controller/CourseController.class
 com/example/springapp/service/CourseService.class
 main/java/com/example/springapp/repository/PaymentRepository.class
 com/example/springapp/repository/EnrollmentRepository.class
@@ -16,4 +15,4 @@ com/example/springapp/model/Enrollment.class
 com/example/springapp/controller/EnrollmentController.class
 com/example/springapp/service/LessonServiceImpl.class
 com/example/springapp/repository/LessonRepository.class
-com/example/springapp/controller/LessonController.class
+com/example/springapp/service/AssignmentQuestionService.class
